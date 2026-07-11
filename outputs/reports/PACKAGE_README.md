@@ -21,6 +21,17 @@ the QA path that resolved the ECAL/HCAL hit-signal gate using the user's continu
 - `outputs/metrics/validation_leaderboard.csv`: validation candidate comparison.
 - `outputs/predictions/test_M1_xgb_focus_only.parquet`: accepted champion focus-test prediction
   artifact copied from the prior Vertex output set.
+- `outputs/plots/expanded_diagnostics/`: expanded study plot suite, including train/validation loss
+  vs boosting, separate `E`, `px`, `py`, and `pz` loss curves, native head losses, component
+  metrics, feature importance, angular error, response density, and energy-slice diagnostics.
+- `outputs/tables/expanded_diagnostics/`: CSV/JSON source tables behind the expanded plots.
+- `outputs/reports/expanded_diagnostics/expanded_diagnostics_summary.md`: index and notes for the
+  expanded diagnostics.
+- `outputs/reports/expanded_diagnostics/previous_vertex_comparison_summary.md`: comparison to prior
+  successful Vertex jobs in project `asiop-zdc-1`.
+- `outputs/reports/previous_vertex_jobs/`: copied small metric, leaderboard, selection, and job-state
+  artifacts from the previous Vertex output prefixes.
+- `outputs/reports/expanded_diagnostics_montage.png`: visual QA montage of all 36 expanded plots.
 - `outputs/ZDC_Accepted_XGB_Result_Presentation.pptx`: self-standing presentation for colleagues.
 - `zdc_hybrid_source_accepted_xgb_20260711.tar.gz`: source tarball for the final accepted-result
   repository state.
@@ -43,3 +54,17 @@ gcloud storage rm "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_76
 
 The accepted run is not the newer dual-grid T4 neural study. It is the completed scalar-feature
 XGBoost study from the prior implementation, now explicitly imported and documented in this repo.
+
+## Expanded Diagnostics Provenance
+
+The added loss-curve diagnostics come from the Vertex loss-curve job recorded in
+`outputs/reports/expanded_diagnostics/diagnostics_manifest.json`, with source artifacts from
+`gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs` and output prefix
+`gs://asiop-zdc-1-zdc-reco-us-central1/runs/loss-curves-20260711/outputs`. No local retraining was
+performed to create those boosting curves.
+
+The previous-model comparison uses saved artifacts from these Vertex output prefixes:
+
+- `gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs`
+- `gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix/outputs`
+- `gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs`

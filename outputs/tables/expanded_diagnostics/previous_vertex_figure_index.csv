@@ -1,0 +1,7 @@
+file,description,bytes
+31_previous_vertex_champion_metric_comparison.png,"Champion metric comparison across base full-cpu, finalfix, and accepted finalfix2 Vertex runs.",158084
+32_previous_vertex_percent_improvement_vs_finalfix.png,Percent reduction from previous finalfix champion B1 to accepted finalfix2 XGBoost champion.,57057
+33_previous_vertex_validation_leaderboard_log.png,Validation leaderboard comparison across previous Vertex jobs; log scale exposes earlier XGBoost blow-ups.,96358
+34_previous_vertex_interval_coverage.png,Empirical interval coverage comparison across previous and accepted Vertex jobs.,58888
+35_previous_vertex_energy_response_bias.png,Energy response and relative bias comparison across Vertex runs.,73454
+36_previous_vertex_job_chronology.png,"Vertex custom-job chronology including canceled, completed, and diagnostic jobs.",69547

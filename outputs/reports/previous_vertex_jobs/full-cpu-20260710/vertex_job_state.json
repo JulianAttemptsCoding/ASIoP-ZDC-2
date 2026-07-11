@@ -1,0 +1,335 @@
+{
+  "completed_utc": "2026-07-10T14:18:35.115579+00:00",
+  "created_utc": "2026-07-10T12:32:55.564493+00:00",
+  "current_stage": "complete",
+  "data_gcs": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+  "download": {
+    "destination": "/tmp/zdc_run/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+    "sha256": "b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533",
+    "size_bytes": 25022001408,
+    "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root"
+  },
+  "output_gcs": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+  "stage_history": [
+    {
+      "completed_utc": "2026-07-10T12:37:26.257953+00:00",
+      "stage": "download-root",
+      "started_utc": "2026-07-10T12:32:56.411880+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T12:39:25.278074+00:00",
+      "stage": "inspect-root",
+      "started_utc": "2026-07-10T12:37:26.590009+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T12:39:25.618218+00:00",
+      "stage": "validate-schema",
+      "started_utc": "2026-07-10T12:39:25.476173+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T12:54:18.477676+00:00",
+      "stage": "build-targets",
+      "started_utc": "2026-07-10T12:39:25.736504+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T12:55:49.969983+00:00",
+      "stage": "make-splits",
+      "started_utc": "2026-07-10T12:54:18.645320+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:07:31.614296+00:00",
+      "stage": "build-features",
+      "started_utc": "2026-07-10T12:55:50.767448+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:08:12.760622+00:00",
+      "stage": "train-baselines",
+      "started_utc": "2026-07-10T14:07:31.922853+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:14.021889+00:00",
+      "stage": "train-xgb",
+      "started_utc": "2026-07-10T14:08:12.944729+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:14.776221+00:00",
+      "stage": "select-model",
+      "started_utc": "2026-07-10T14:18:14.499824+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:17.929251+00:00",
+      "stage": "calibrate",
+      "started_utc": "2026-07-10T14:18:14.941625+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:18.352771+00:00",
+      "stage": "unlock-test",
+      "started_utc": "2026-07-10T14:18:18.107651+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:30.296573+00:00",
+      "stage": "evaluate-test",
+      "started_utc": "2026-07-10T14:18:18.501375+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:34.691824+00:00",
+      "stage": "plot",
+      "started_utc": "2026-07-10T14:18:30.443160+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T14:18:34.993357+00:00",
+      "stage": "verify",
+      "started_utc": "2026-07-10T14:18:34.834205+00:00",
+      "status": "complete"
+    }
+  ],
+  "stage_results": {
+    "build-features": {
+      "feature_count": 195,
+      "path": "/tmp/zdc_run/outputs/data/features_manifest.parquet",
+      "rows": 764940,
+      "sha256": "8656f87a736d8e21235eca4792b495d5aa2b5107ec2bfa6c08a467c68a125888",
+      "status": "built"
+    },
+    "build-targets": {
+      "path": "/tmp/zdc_run/outputs/data/targets.parquet",
+      "rows": 764940,
+      "sha256": "5fa54bbe331a1dcd88a9c3b57fff3da5f4ccd2a1b1ba45a6f3e0d7b042248e0e",
+      "status": "built"
+    },
+    "calibrate": {
+      "calibration": {
+        "created_utc": "2026-07-10T14:18:17.834821+00:00",
+        "energy_abs_error_quantiles_gev": {
+          "0.68": 26.554970847439805,
+          "0.9": 42.30872160988742,
+          "0.95": 55.72205920844178
+        },
+        "energy_response_intercept": 46.83450284632919,
+        "energy_response_slope": 0.6879028328845238,
+        "model_id": "B1_ridge_constrained",
+        "source": "validation focus reused after model selection; empirical only",
+        "validation_calibrated_prediction_sha256": "523d220b619b7443699c2a8e8d4dac1e13da2238bcdcf8a4a2bfa278025ff653"
+      },
+      "model_id": "B1_ridge_constrained",
+      "status": "calibrated"
+    },
+    "download-root": {
+      "destination": "/tmp/zdc_run/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+      "sha256": "b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533",
+      "size_bytes": 25022001408,
+      "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root"
+    },
+    "evaluate-test": {
+      "metrics": {
+        "angular_68_mrad": 39.4608363659558,
+        "angular_95_mrad": 87.82566429883639,
+        "angular_median_mrad": 26.27980332575699,
+        "angular_valid_fraction": 1.0,
+        "energy_mae_gev": 102.41396961146465,
+        "energy_relative_bias_mean": -0.6164822197707632,
+        "energy_relative_rmse": 0.6437883171665506,
+        "energy_relative_width68": 0.18006244049735112,
+        "energy_response_mean": 0.38351778022923677,
+        "energy_response_median": 0.31814957599785815,
+        "focus_events": 50685,
+        "macro_rms_relative_fourvector_error": 0.875448901884476,
+        "mass_shell_residual_abs_max_gev2": 1.787681114251427e-12,
+        "n_events": 50685,
+        "relative_fourvector_error_mean": 0.8727546585759429,
+        "relative_fourvector_error_rms": 0.9109797722777139
+      },
+      "model_id": "B1_ridge_constrained",
+      "status": "evaluated"
+    },
+    "inspect-root": {
+      "branch_mapping": {
+        "ecal_cell_id": "ecal_cellID",
+        "ecal_signal": "ecal_energy",
+        "ecal_x": "ecal_posX",
+        "ecal_y": "ecal_posY",
+        "ecal_z": "ecal_posZ",
+        "hcal_cell_id": "hcal_cellID",
+        "hcal_layer_id": "hcal_LayerID",
+        "hcal_signal": "hcal_energy",
+        "hcal_x": "hcal_posX",
+        "hcal_y": "hcal_posY",
+        "hcal_z": "hcal_posZ",
+        "truth_energy": "mcPar_energy",
+        "truth_pdg": "mcPar_PDG",
+        "truth_px": "mcPar_momX",
+        "truth_py": "mcPar_momY",
+        "truth_pz": "mcPar_momZ"
+      },
+      "branch_types": {
+        "ecal_cellID": "std::vector<int32_t>",
+        "ecal_energy": "std::vector<double>",
+        "ecal_posX": "std::vector<double>",
+        "ecal_posY": "std::vector<double>",
+        "ecal_posZ": "std::vector<double>",
+        "hcal_LayerID": "std::vector<int32_t>",
+        "hcal_cellID": "std::vector<int32_t>",
+        "hcal_energy": "std::vector<double>",
+        "hcal_posX": "std::vector<double>",
+        "hcal_posY": "std::vector<double>",
+        "hcal_posZ": "std::vector<double>",
+        "mcPar_PDG": "std::vector<int32_t>",
+        "mcPar_energy": "std::vector<double>",
+        "mcPar_momX": "std::vector<double>",
+        "mcPar_momY": "std::vector<double>",
+        "mcPar_momZ": "std::vector<double>"
+      },
+      "config_sha256": "95b8652f56c433311f6e298d014dc6883a588208c9be4cc24768c8db53494976",
+      "data_path": "/tmp/zdc_run/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+      "data_sha256": "b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533",
+      "data_size_bytes": 25022001408,
+      "detector_frame": {
+        "ecal_z_bounds": [
+          -3.473609836953776,
+          3.526390163046224
+        ],
+        "hcal_z_bounds": [
+          5.476841899636298,
+          168.4768418996363
+        ],
+        "origin": [
+          -90.84772338867188,
+          -1.5149999618530274,
+          3572.5453125000004
+        ],
+        "x_axis": [
+          2.8386866559830266e-05,
+          0.9999962305248008,
+          -0.0027455655838815353
+        ],
+        "y_axis": [
+          -0.9999465550770869,
+          0.0,
+          -0.010338616419355578
+        ],
+        "z_axis": [
+          -0.01033857744819739,
+          0.002745712328265261,
+          0.9999427858033467
+        ]
+      },
+      "entries": 764940,
+      "geometry_observation": {
+        "ecal_projected_hit_span_cm": [
+          57.572101531138145,
+          57.563816212386946,
+          1.002044871590167
+        ],
+        "hcal_projected_hit_span_cm": [
+          65.47466415502919,
+          65.52949105081406,
+          157.9418846143526
+        ],
+        "nominal_ecal_face_depth_cm": [
+          60.0,
+          60.0,
+          7.0
+        ],
+        "nominal_hcal_volume_cm": [
+          65.0,
+          60.0,
+          163.0
+        ],
+        "note": "Observed hit spans are occupancy diagnostics, not automatically accepted geometry. Reconcile coordinate centers/IDs with the nominal segmentation before training."
+      },
+      "inspection_entries": 50000,
+      "position_scale_to_cm": 0.1,
+      "tree_name": "myTree",
+      "truth_energy_convention": {
+        "energy_scale_to_gev": 1.0,
+        "median_relative_residual": 2.4818958903329016e-12,
+        "momentum_scale_to_gev": 1.0,
+        "p99_relative_residual": 6.64186869907458e-09,
+        "second_best_score_ratio": 93458924.70594324,
+        "semantics": "total"
+      }
+    },
+    "make-splits": {
+      "focus_counts": {
+        "test": 50685,
+        "train": 408276,
+        "validation": 50626
+      },
+      "group_policy": "group_uid comes from detector fingerprint because no run/seed branch exists.",
+      "path": "/tmp/zdc_run/outputs/data/splits.parquet",
+      "rows": 764940,
+      "shoulder_counts": {
+        "test": 25420,
+        "train": 204549,
+        "validation": 25384
+      },
+      "split_counts": {
+        "test": 76105,
+        "train": 612825,
+        "validation": 76010
+      },
+      "split_sha256": "16668878691c54415e07758d663ec0a1b34de96b0ff1a25c203480ef23c7f77c",
+      "status": "built"
+    },
+    "plot": {
+      "plots": [
+        "/tmp/zdc_run/outputs/plots/focus_test_energy_response.png",
+        "/tmp/zdc_run/outputs/plots/focus_test_energy_residual.png"
+      ],
+      "status": "plotted"
+    },
+    "select-model": {
+      "champion_model_id": "B1_ridge_constrained",
+      "selection_sha256": "930ed2a5e7b08c6467b5e5b0526120d821de88cb3468b280fba9d08af00d93bb",
+      "status": "selected"
+    },
+    "train-baselines": {
+      "models": [
+        "B0_visible_sum_axis",
+        "B1_ridge_constrained",
+        "M2_ridge_direct_projected"
+      ],
+      "status": "built"
+    },
+    "train-xgb": {
+      "models": [
+        "M1_xgb_focus_only",
+        "M1_xgb_full_support"
+      ],
+      "status": "built"
+    },
+    "unlock-test": {
+      "path": "/tmp/zdc_run/outputs/reports/test_unlock.json",
+      "sha256": "5d8b66ad93c6813a93cb08455e9adabc09429fe227cf6f878c3e37bbe5c1085d",
+      "status": "unlocked"
+    },
+    "validate-schema": {
+      "schema": "/tmp/zdc_run/outputs/preflight/schema.lock.yaml",
+      "schema_sha256": "b8ddb5834db2aae6b40a1706394d32aa673a1d6528fd71eac10d3c12417c7ebf",
+      "status": "ok",
+      "tree_name": "myTree"
+    },
+    "verify": {
+      "metrics_sha256": "617216451003be715d9b6e4b21941763ae0859bceb5c13302f5ad3a928b8a9c6",
+      "status": "ok",
+      "verified_artifacts": 14
+    }
+  },
+  "state_schema_version": 1,
+  "status": "complete",
+  "updated_utc": "2026-07-10T14:18:35.115596+00:00",
+  "workdir": "/tmp/zdc_run"
+}

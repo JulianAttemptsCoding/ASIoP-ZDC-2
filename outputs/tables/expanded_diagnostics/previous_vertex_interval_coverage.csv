@@ -1,0 +1,10 @@
+run,label,nominal,coverage
+full-cpu-20260710,base full-cpu,0.68,0.12096280950971688
+full-cpu-20260710,base full-cpu,0.9,0.19855973167603827
+full-cpu-20260710,base full-cpu,0.95,0.26548288448258855
+full-cpu-20260710-finalfix,finalfix,0.68,0.6816612409983229
+full-cpu-20260710-finalfix,finalfix,0.9,0.8992995955410871
+full-cpu-20260710-finalfix,finalfix,0.95,0.9505573641116701
+full-cpu-20260710-finalfix2,finalfix2 accepted,0.68,0.6807734043602643
+full-cpu-20260710-finalfix2,finalfix2 accepted,0.9,0.9021209430798066
+full-cpu-20260710-finalfix2,finalfix2 accepted,0.95,0.9505573641116701

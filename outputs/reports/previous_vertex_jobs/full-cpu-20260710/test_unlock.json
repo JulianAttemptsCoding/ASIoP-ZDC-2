@@ -1,0 +1,9 @@
+{
+  "calibration_hash": "e8930b24322f1dacd0fd952040e1fac6fbada84f3328805be4f5e4a6b0f467a5",
+  "champion_model_id": "B1_ridge_constrained",
+  "created_utc": "2026-07-10T14:18:18.352224+00:00",
+  "selection_decision_hash": "930ed2a5e7b08c6467b5e5b0526120d821de88cb3468b280fba9d08af00d93bb",
+  "statement": "No further tuning is allowed after this unlock.",
+  "test_query": "split == 'test' and 50 <= generator_energy_gev <= 250",
+  "validation_leaderboard_hash": "e1a1de12e57c77c4d5ac0de592f750e78da049360cf1846a1b27d35c6906b061"
+}

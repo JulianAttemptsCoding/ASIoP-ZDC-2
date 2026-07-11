@@ -71,6 +71,54 @@ Empirical interval coverage on focus test:
 - 90% interval: `0.9021209430798066`
 - 95% interval: `0.9505573641116701`
 
+## Expanded Diagnostics
+
+Added diagnostic figures and tables are under:
+
+- `outputs/plots/expanded_diagnostics/`
+- `outputs/tables/expanded_diagnostics/`
+- `outputs/reports/expanded_diagnostics/expanded_diagnostics_summary.md`
+
+The added loss-curve figures include overall train/validation relative four-vector RMSE vs boosting
+round, separate train/validation RMSE-vs-boosting plots for `E`, `px`, `py`, and `pz`, native
+XGBoost head-loss curves, train-validation gap plots, and best-validation-round train-vs-validation
+bars.
+
+Best validation loss-curve points:
+
+- Overall relative four-vector RMSE: `0.2143414040678046` at boosting round `735`.
+- `E` RMSE: `20.408325706358482 GeV` at boosting round `980`.
+- `px` RMSE: `5.177989169890205 GeV` at boosting round `2499`.
+- `py` RMSE: `5.20788450849503 GeV` at boosting round `2499`.
+- `pz` RMSE: `19.135673644391403 GeV` at boosting round `980`.
+
+These loss curves come from the Vertex loss-curve job at
+`gs://asiop-zdc-1-zdc-reco-us-central1/runs/loss-curves-20260711/outputs`; no local retraining was
+performed for the boosting diagnostics.
+
+## Previous Vertex Model Comparison
+
+The accepted `finalfix2` run was compared against the previous successful Vertex outputs in project
+`asiop-zdc-1`:
+
+- `full-cpu-20260710`: first completed full CPU run; champion `B1_ridge_constrained`; XGBoost
+  validation candidates numerically blew up.
+- `full-cpu-20260710-finalfix`: previous successful/fixed run; champion `B1_ridge_constrained`.
+- `full-cpu-20260710-finalfix2`: accepted run; champion `M1_xgb_focus_only`.
+
+Compared with the previous `finalfix` champion, the accepted run improved:
+
+- Macro RMS relative four-vector error: `0.3276764732159172` to `0.20443314430393622`
+  (`37.61%` reduction).
+- Energy MAE: `22.61899985919906 GeV` to `11.48034175891426 GeV` (`49.24%` reduction).
+- Energy relative RMSE: `0.26065339433663753` to `0.1543518245985` (`40.78%` reduction).
+- Angular median: `26.27980332575699 mrad` to `5.872449369417561 mrad` (`77.65%` reduction).
+- Angular 95%: `87.82566429883639 mrad` to `16.62022486411495 mrad` (`81.08%` reduction).
+
+Comparison plots and tables are in `outputs/plots/expanded_diagnostics/` and
+`outputs/tables/expanded_diagnostics/`, especially files `31` through `36` and
+`previous_vertex_*`.
+
 ## Vertex Provenance And Spend
 
 The accepted finalization job completed on Vertex:

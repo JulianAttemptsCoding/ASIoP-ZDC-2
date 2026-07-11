@@ -1,0 +1,18 @@
+{
+  "angular_68_mrad": 39.4608363659558,
+  "angular_95_mrad": 87.82566429883639,
+  "angular_median_mrad": 26.27980332575699,
+  "angular_valid_fraction": 1.0,
+  "energy_mae_gev": 102.41396961146465,
+  "energy_relative_bias_mean": -0.6164822197707632,
+  "energy_relative_rmse": 0.6437883171665506,
+  "energy_relative_width68": 0.18006244049735112,
+  "energy_response_mean": 0.38351778022923677,
+  "energy_response_median": 0.31814957599785815,
+  "focus_events": 50685,
+  "macro_rms_relative_fourvector_error": 0.875448901884476,
+  "mass_shell_residual_abs_max_gev2": 1.787681114251427e-12,
+  "n_events": 50685,
+  "relative_fourvector_error_mean": 0.8727546585759429,
+  "relative_fourvector_error_rms": 0.9109797722777139
+}

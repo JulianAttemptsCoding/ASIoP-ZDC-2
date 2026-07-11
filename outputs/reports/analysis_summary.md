@@ -33,6 +33,22 @@ The accepted completed result is the prior Vertex scalar-feature/XGBoost run:
 - Angular median: `5.872449369417561 mrad`
 - Angular 68/95: `7.98112692599035 / 16.62022486411495 mrad`
 
+## Expanded Graphs
+
+Expanded study figures are in `outputs/plots/expanded_diagnostics/`. The requested boosting plots
+are files `19` through `23`: overall loss and separate `E`, `px`, `py`, and `pz` train/validation
+RMSE curves. The same folder also contains native-head losses, train-validation gap plots, feature
+importance, feature/error correlations, energy-slice diagnostics, angular-error plots,
+response-density plots, and component metric summaries.
+
+## Previous Vertex Comparison
+
+The accepted `finalfix2` XGBoost champion was compared against prior successful Vertex jobs in
+`asiop-zdc-1`. Versus the previous `finalfix` champion (`B1_ridge_constrained`), it reduced macro
+RMS relative four-vector error by `37.61%`, energy MAE by `49.24%`, energy relative RMSE by
+`40.78%`, angular median by `77.65%`, and angular 95% by `81.08%`. The comparison report is
+`outputs/reports/expanded_diagnostics/previous_vertex_comparison_summary.md`.
+
 ## Caveat
 
 This is a completed scalar-feature/XGBoost Vertex run from the prior implementation. The newer

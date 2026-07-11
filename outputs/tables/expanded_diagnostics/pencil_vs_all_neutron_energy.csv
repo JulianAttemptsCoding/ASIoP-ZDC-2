@@ -1,0 +1,5 @@
+dataset_model,energy_mae_gev,energy_rmse_gev,energy_r2,energy_bias_rel_mean,energy_resolution_rel_sigma,scope
+"Pencil beam
+XGB extended37",4.424814327393289,7.365292490359423,0.9837595470331598,0.0036621268754563,0.0532823283069101,"100k pencil-beam neutrons, 50-250 GeV, energy only"
+"All-neutron
+M1 XGB focus",11.48034175891426,20.05914890606345,0.8788983703928471,0.02376007491279023,0.15251361748342132,"765k broad-angle neutrons, 50-250 GeV focus, four-vector output"

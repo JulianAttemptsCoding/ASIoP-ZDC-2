@@ -63,3 +63,38 @@ One attempted command,
 `.venv\Scripts\python.exe -m zdc_hybrid.cli validate-config --config configs/study.yaml`, returned
 an argparse error because the strict `zdc_hybrid` CLI does not expose a `validate-config`
 subcommand. The matching strict verifier and the legacy config validator both passed.
+
+## Expanded Diagnostics Added
+
+Added 36 diagnostic plots under `outputs/plots/expanded_diagnostics/`, with source tables under
+`outputs/tables/expanded_diagnostics/` and notes under `outputs/reports/expanded_diagnostics/`.
+The requested new plots are:
+
+- `19_loss_overall_train_validation_vs_boosting.png`
+- `20_loss_E_train_validation_vs_boosting.png`
+- `21_loss_px_train_validation_vs_boosting.png`
+- `22_loss_py_train_validation_vs_boosting.png`
+- `23_loss_pz_train_validation_vs_boosting.png`
+
+The loss curves came from the prior Vertex loss-curve diagnostic job, not from local retraining:
+
+- Source GCS: `gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs`
+- Loss-curve GCS: `gs://asiop-zdc-1-zdc-reco-us-central1/runs/loss-curves-20260711/outputs`
+- Train focus rows: `408,276`
+- Validation focus rows: `50,626`
+
+Visual QA: `outputs/reports/expanded_diagnostics_montage.png` shows all 36 plots and was inspected
+for blank or obviously malformed renderings.
+
+## Previous Vertex Comparison Added
+
+Fetched and compared small saved metric artifacts from prior Vertex output prefixes in project
+`asiop-zdc-1`:
+
+- `full-cpu-20260710`
+- `full-cpu-20260710-finalfix`
+- `full-cpu-20260710-finalfix2`
+
+Canceled jobs were included in `previous_vertex_job_chronology.csv` but excluded from performance
+comparisons. The comparison shows accepted `finalfix2` replaced the previous `B1_ridge_constrained`
+champion with `M1_xgb_focus_only` and reduced the previous `finalfix` macro test error by `37.61%`.

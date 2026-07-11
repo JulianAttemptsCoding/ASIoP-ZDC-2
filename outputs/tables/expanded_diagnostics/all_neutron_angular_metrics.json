@@ -1,0 +1,22 @@
+[
+  {
+    "sample": "all_test_0_300",
+    "n": 76105,
+    "angular_valid_fraction": 1.0,
+    "angular_median_mrad": 6.265164464214547,
+    "angular_68_mrad": 8.982643399133947,
+    "angular_95_mrad": 31.861440628050346,
+    "mass_shell_residual_abs_max_gev2": 3.2773117553119846e-11,
+    "mass_shell_residual_rms_gev2": 5.8685365513186786e-12
+  },
+  {
+    "sample": "focus_50_250",
+    "n": 50685,
+    "angular_valid_fraction": 1.0,
+    "angular_median_mrad": 5.8724493694553725,
+    "angular_68_mrad": 7.981126925992019,
+    "angular_95_mrad": 16.62022486411495,
+    "mass_shell_residual_abs_max_gev2": 3.2773117553119846e-11,
+    "mass_shell_residual_rms_gev2": 5.623059735439802e-12
+  }
+]
