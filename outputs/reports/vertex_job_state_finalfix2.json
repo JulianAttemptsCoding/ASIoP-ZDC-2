@@ -1,0 +1,2145 @@
+{
+  "completed_utc": "2026-07-10T15:12:49.134797+00:00",
+  "created_utc": "2026-07-10T15:00:07.764231+00:00",
+  "current_stage": "complete",
+  "output_gcs": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs",
+  "source_gcs": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+  "stage_history": [
+    {
+      "completed_utc": "2026-07-10T15:01:18.573856+00:00",
+      "stage": "download-existing-artifacts",
+      "started_utc": "2026-07-10T15:00:09.305381+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:01:18.901655+00:00",
+      "stage": "clear-training-artifacts",
+      "started_utc": "2026-07-10T15:01:18.739465+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:01:19.160520+00:00",
+      "stage": "validate-schema",
+      "started_utc": "2026-07-10T15:01:19.019731+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:01:44.911251+00:00",
+      "stage": "train-baselines",
+      "started_utc": "2026-07-10T15:01:19.319692+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:23.125886+00:00",
+      "stage": "train-xgb",
+      "started_utc": "2026-07-10T15:01:45.078396+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:23.460445+00:00",
+      "stage": "select-model",
+      "started_utc": "2026-07-10T15:12:23.297312+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:26.686697+00:00",
+      "stage": "calibrate",
+      "started_utc": "2026-07-10T15:12:23.627303+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:26.980125+00:00",
+      "stage": "unlock-test",
+      "started_utc": "2026-07-10T15:12:26.831917+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:43.829324+00:00",
+      "stage": "evaluate-test",
+      "started_utc": "2026-07-10T15:12:27.127722+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:48.502123+00:00",
+      "stage": "plot",
+      "started_utc": "2026-07-10T15:12:44.007592+00:00",
+      "status": "complete"
+    },
+    {
+      "completed_utc": "2026-07-10T15:12:48.779965+00:00",
+      "stage": "verify",
+      "started_utc": "2026-07-10T15:12:48.639970+00:00",
+      "status": "complete"
+    }
+  ],
+  "stage_results": {
+    "calibrate": {
+      "calibration": {
+        "created_utc": "2026-07-10T15:12:26.583758+00:00",
+        "energy_abs_error_quantiles_gev": {
+          "0.68": 10.016650725793653,
+          "0.9": 27.994068233189182,
+          "0.95": 43.11448435381374
+        },
+        "energy_response_intercept": 3.1029960346759258,
+        "energy_response_slope": 0.988212998582127,
+        "model_id": "M1_xgb_focus_only",
+        "source": "validation focus reused after model selection; empirical only",
+        "validation_calibrated_prediction_sha256": "76847692f8d5267435d7b907c1ad48acbc0a493adf564ccf7d989c5277df9147"
+      },
+      "model_id": "M1_xgb_focus_only",
+      "status": "calibrated"
+    },
+    "clear-training-artifacts": {
+      "status": "cleared"
+    },
+    "download-existing-artifacts": {
+      "destination": "/tmp/zdc_resume/outputs",
+      "downloaded_files": 493,
+      "files": [
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00000.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00000.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00001.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00001.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00002.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00002.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00003.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00003.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00004.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00004.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00005.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00005.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00006.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00006.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00007.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00007.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00008.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00008.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00009.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00009.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00010.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00010.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00011.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00011.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00012.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00012.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00013.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00013.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00014.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00014.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00015.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00015.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00016.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00016.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00017.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00017.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00018.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00018.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00019.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00019.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00020.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00020.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00021.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00021.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00022.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00022.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00023.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00023.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00024.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00024.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00025.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00025.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00026.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00026.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00027.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00027.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00028.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00028.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00029.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00029.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00030.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00030.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00031.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00031.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00032.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00032.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00033.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00033.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00034.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00034.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00035.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00035.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00036.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00036.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00037.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00037.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00038.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00038.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00039.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00039.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00040.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00040.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00041.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00041.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00042.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00042.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00043.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00043.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00044.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00044.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00045.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00045.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00046.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00046.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00047.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00047.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00048.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00048.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00049.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00049.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00050.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00050.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00051.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00051.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00052.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00052.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00053.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00053.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00054.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00054.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00055.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00055.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00056.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00056.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00057.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00057.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00058.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00058.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00059.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00059.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00060.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00060.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00061.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00061.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00062.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00062.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00063.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00063.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00064.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00064.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00065.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00065.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00066.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00066.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00067.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00067.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00068.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00068.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00069.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00069.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00070.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00070.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00071.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00071.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00072.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00072.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00073.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00073.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00074.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00074.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00075.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00075.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00076.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00076.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00077.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00077.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00078.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00078.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00079.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00079.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00080.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00080.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00081.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00081.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00082.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00082.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00083.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00083.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00084.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00084.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00085.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00085.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00086.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00086.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00087.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00087.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00088.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00088.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00089.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00089.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00090.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00090.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00091.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00091.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00092.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00092.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00093.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00093.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00094.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00094.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00095.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00095.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00096.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00096.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00097.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00097.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00098.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00098.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00099.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00099.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00100.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00100.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00101.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00101.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00102.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00102.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00103.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00103.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00104.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00104.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00105.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00105.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00106.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00106.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00107.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00107.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00108.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00108.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00109.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00109.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00110.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00110.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00111.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00111.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00112.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00112.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00113.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00113.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00114.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00114.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00115.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00115.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00116.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00116.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00117.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00117.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00118.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00118.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00119.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00119.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00120.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00120.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00121.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00121.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00122.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00122.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00123.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00123.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00124.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00124.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00125.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00125.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00126.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00126.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00127.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00127.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00128.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00128.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00129.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00129.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00130.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00130.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00131.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00131.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00132.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00132.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00133.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00133.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00134.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00134.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00135.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00135.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00136.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00136.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00137.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00137.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00138.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00138.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00139.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00139.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00140.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00140.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00141.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00141.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00142.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00142.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00143.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00143.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00144.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00144.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00145.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00145.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00146.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00146.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00147.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00147.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00148.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00148.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00149.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00149.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00150.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00150.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00151.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00151.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00152.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00152.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00153.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00153.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00154.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00154.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00155.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00155.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00156.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00156.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00157.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00157.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00158.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00158.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00159.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00159.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00160.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00160.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00161.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00161.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00162.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00162.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00163.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00163.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00164.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00164.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00165.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00165.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00166.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00166.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00167.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00167.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00168.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00168.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00169.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00169.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00170.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00170.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00171.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00171.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00172.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00172.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00173.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00173.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00174.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00174.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00175.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00175.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00176.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00176.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00177.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00177.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00178.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00178.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00179.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00179.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00180.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00180.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00181.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00181.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00182.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00182.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00183.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00183.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00184.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00184.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00185.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00185.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00186.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00186.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00187.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00187.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00188.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00188.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00189.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00189.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00190.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00190.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00191.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00191.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00192.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00192.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00193.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00193.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00194.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00194.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00195.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00195.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00196.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00196.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00197.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00197.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00198.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00198.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00199.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00199.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00200.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00200.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00201.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00201.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00202.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00202.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00203.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00203.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00204.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00204.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00205.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00205.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00206.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00206.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00207.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00207.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00208.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00208.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00209.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00209.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00210.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00210.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00211.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00211.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00212.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00212.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00213.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00213.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00214.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00214.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00215.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00215.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00216.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00216.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00217.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00217.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00218.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00218.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00219.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00219.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00220.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00220.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00221.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00221.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00222.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00222.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00223.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00223.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00224.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00224.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00225.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00225.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00226.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00226.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00227.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00227.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00228.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00228.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00229.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00229.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00230.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00230.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00231.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00231.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00232.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00232.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00233.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00233.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00234.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00234.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00235.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00235.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00236.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00236.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00237.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00237.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00238.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00238.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00239.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00239.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00240.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00240.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00241.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00241.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00242.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00242.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00243.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00243.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00244.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00244.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00245.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00245.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00246.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00246.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00247.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00247.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00248.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00248.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00249.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00249.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00250.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00250.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00251.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00251.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00252.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00252.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00253.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00253.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00254.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00254.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00255.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00255.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00256.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00256.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00257.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00257.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00258.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00258.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00259.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00259.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00260.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00260.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00261.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00261.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00262.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00262.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00263.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00263.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00264.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00264.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00265.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00265.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00266.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00266.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00267.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00267.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00268.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00268.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00269.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00269.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00270.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00270.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00271.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00271.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00272.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00272.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00273.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00273.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00274.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00274.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00275.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00275.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00276.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00276.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00277.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00277.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00278.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00278.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00279.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00279.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00280.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00280.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00281.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00281.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00282.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00282.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00283.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00283.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00284.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00284.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00285.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00285.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00286.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00286.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00287.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00287.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00288.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00288.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00289.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00289.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00290.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00290.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00291.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00291.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00292.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00292.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00293.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00293.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00294.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00294.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00295.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00295.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00296.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00296.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00297.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00297.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00298.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00298.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00299.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00299.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00300.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00300.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00301.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00301.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00302.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00302.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00303.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00303.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00304.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00304.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00305.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00305.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00306.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00306.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00307.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00307.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00308.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00308.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00309.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00309.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00310.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00310.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00311.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00311.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00312.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00312.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00313.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00313.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00314.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00314.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00315.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00315.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00316.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00316.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00317.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00317.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00318.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00318.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00319.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00319.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00320.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00320.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00321.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00321.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00322.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00322.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00323.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00323.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00324.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00324.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00325.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00325.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00326.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00326.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00327.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00327.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00328.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00328.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00329.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00329.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00330.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00330.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00331.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00331.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00332.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00332.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00333.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00333.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00334.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00334.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00335.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00335.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00336.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00336.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00337.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00337.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00338.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00338.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00339.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00339.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00340.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00340.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00341.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00341.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00342.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00342.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00343.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00343.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00344.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00344.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00345.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00345.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00346.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00346.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00347.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00347.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00348.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00348.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00349.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00349.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00350.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00350.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00351.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00351.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00352.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00352.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00353.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00353.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00354.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00354.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00355.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00355.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00356.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00356.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00357.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00357.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00358.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00358.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00359.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00359.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00360.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00360.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00361.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00361.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00362.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00362.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00363.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00363.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00364.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00364.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00365.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00365.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00366.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00366.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00367.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00367.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00368.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00368.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00369.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00369.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00370.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00370.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00371.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00371.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00372.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00372.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00373.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00373.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00374.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00374.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00375.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00375.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00376.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00376.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00377.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00377.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00378.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00378.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00379.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00379.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00380.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00380.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00381.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00381.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00382.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00382.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00383.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00383.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00384.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00384.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00385.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00385.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00386.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00386.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00387.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00387.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00388.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00388.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00389.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00389.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00390.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00390.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00391.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00391.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00392.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00392.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00393.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00393.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00394.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00394.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00395.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00395.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00396.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00396.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00397.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00397.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00398.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00398.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00399.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00399.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00400.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00400.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00401.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00401.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00402.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00402.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00403.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00403.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00404.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00404.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00405.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00405.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00406.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00406.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00407.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00407.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00408.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00408.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00409.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00409.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00410.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00410.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00411.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00411.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00412.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00412.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00413.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00413.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00414.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00414.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00415.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00415.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00416.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00416.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00417.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00417.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00418.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00418.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00419.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00419.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00420.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00420.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00421.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00421.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00422.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00422.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00423.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00423.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00424.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00424.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00425.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00425.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00426.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00426.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00427.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00427.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00428.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00428.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00429.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00429.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00430.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00430.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00431.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00431.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00432.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00432.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00433.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00433.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00434.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00434.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00435.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00435.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00436.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00436.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00437.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00437.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00438.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00438.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00439.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00439.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00440.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00440.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00441.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00441.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00442.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00442.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00443.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00443.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00444.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00444.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00445.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00445.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00446.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00446.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00447.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00447.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00448.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00448.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00449.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00449.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00450.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00450.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00451.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00451.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/features_manifest.parquet/part-00452.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/features_manifest.parquet/part-00452.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/splits.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/splits.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/data/targets.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/data/targets.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/metrics/empirical_interval_coverage.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/metrics/empirical_interval_coverage.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/metrics/focus_test_metrics.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/metrics/focus_test_metrics.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/metrics/validation_leaderboard.csv",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/metrics/validation_leaderboard.csv"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/B0_visible_sum_axis/model.pkl",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/B0_visible_sum_axis/model.pkl"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/B1_ridge_constrained/calibration.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/B1_ridge_constrained/calibration.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/B1_ridge_constrained/model.pkl",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/B1_ridge_constrained/model.pkl"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_focus_only/log1p_kinetic.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_focus_only/log1p_kinetic.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_focus_only/metadata.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_focus_only/metadata.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_focus_only/ux.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_focus_only/ux.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_focus_only/uy.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_focus_only/uy.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_focus_only/uz.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_focus_only/uz.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_full_support/log1p_kinetic.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_full_support/log1p_kinetic.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_full_support/metadata.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_full_support/metadata.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_full_support/ux.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_full_support/ux.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_full_support/uy.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_full_support/uy.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M1_xgb_full_support/uz.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M1_xgb_full_support/uz.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/M2_ridge_direct_projected/model.pkl",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/M2_ridge_direct_projected/model.pkl"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/models/baseline_training_report.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/models/baseline_training_report.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/plots/focus_test_energy_residual.png",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/plots/focus_test_energy_residual.png"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/plots/focus_test_energy_response.png",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/plots/focus_test_energy_response.png"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/test_B1_ridge_constrained.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/test_B1_ridge_constrained.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_B0_visible_sum_axis.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_B0_visible_sum_axis.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_B1_ridge_constrained.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_B1_ridge_constrained.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_M1_xgb_focus_only.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_M1_xgb_focus_only.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_M1_xgb_full_support.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_M1_xgb_full_support.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_M2_ridge_direct_projected.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_M2_ridge_direct_projected.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/predictions/validation_calibrated_B1_ridge_constrained.parquet",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/predictions/validation_calibrated_B1_ridge_constrained.parquet"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/preflight/data_fingerprint.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/preflight/data_fingerprint.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/preflight/inspection_report.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/preflight/inspection_report.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/preflight/schema.lock.yaml",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/preflight/schema.lock.yaml"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/champion.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/champion.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/duplicate_report.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/duplicate_report.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/feature_build_report.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/feature_build_report.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/feature_manifest.csv",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/feature_manifest.csv"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/selection_decision.md",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/selection_decision.md"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/split_report.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/split_report.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/test_unlock.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/test_unlock.json"
+        },
+        {
+          "path": "/tmp/zdc_resume/outputs/reports/vertex_job_state.json",
+          "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs/reports/vertex_job_state.json"
+        }
+      ],
+      "gcs_prefix": "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs"
+    },
+    "evaluate-test": {
+      "metrics": {
+        "angular_68_mrad": 7.98112692599035,
+        "angular_95_mrad": 16.62022486411495,
+        "angular_median_mrad": 5.872449369417561,
+        "angular_valid_fraction": 1.0,
+        "energy_mae_gev": 11.48034175891426,
+        "energy_relative_bias_mean": 0.023760074912790228,
+        "energy_relative_rmse": 0.1543518245985,
+        "energy_relative_width68": 0.07149108719165924,
+        "energy_response_mean": 1.0237600749127902,
+        "energy_response_median": 1.016589479160418,
+        "focus_events": 50685,
+        "macro_rms_relative_fourvector_error": 0.20443314430393622,
+        "mass_shell_residual_abs_max_gev2": 3.2773117553119846e-11,
+        "n_events": 50685,
+        "relative_fourvector_error_mean": 0.12317056310240804,
+        "relative_fourvector_error_rms": 0.21863032113655304
+      },
+      "model_id": "M1_xgb_focus_only",
+      "status": "evaluated"
+    },
+    "plot": {
+      "plots": [
+        "/tmp/zdc_resume/outputs/plots/focus_test_energy_response.png",
+        "/tmp/zdc_resume/outputs/plots/focus_test_energy_residual.png"
+      ],
+      "status": "plotted"
+    },
+    "select-model": {
+      "champion_model_id": "M1_xgb_focus_only",
+      "selection_sha256": "5ec2be1876f85c33baba1dd9f8a79357b50e500db31c5e897f0d6dc007b679a9",
+      "status": "selected"
+    },
+    "train-baselines": {
+      "models": [
+        "B0_visible_sum_axis",
+        "B1_ridge_constrained",
+        "M2_ridge_direct_projected"
+      ],
+      "status": "built"
+    },
+    "train-xgb": {
+      "models": [
+        "M1_xgb_focus_only",
+        "M1_xgb_full_support"
+      ],
+      "status": "built"
+    },
+    "unlock-test": {
+      "path": "/tmp/zdc_resume/outputs/reports/test_unlock.json",
+      "sha256": "2b1d9ea103e375b8cb2e2c8a3e113dfde4fb7043e2496b9bed3345b1093ddf5a",
+      "status": "unlocked"
+    },
+    "validate-schema": {
+      "schema": "/tmp/zdc_resume/outputs/preflight/schema.lock.yaml",
+      "schema_sha256": "b8ddb5834db2aae6b40a1706394d32aa673a1d6528fd71eac10d3c12417c7ebf",
+      "status": "ok",
+      "tree_name": "myTree"
+    },
+    "verify": {
+      "metrics_sha256": "836c1f3400941bcd288797ca88fb16fc7e314475ae29900366b330db73bfd68b",
+      "status": "ok",
+      "verified_artifacts": 14
+    }
+  },
+  "state_schema_version": 1,
+  "status": "complete",
+  "updated_utc": "2026-07-10T15:12:49.134827+00:00",
+  "workdir": "/tmp/zdc_resume"
+}

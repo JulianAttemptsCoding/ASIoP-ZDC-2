@@ -29,6 +29,7 @@ vertex = ["google-cloud-aiplatform>=1.80,<2", "google-cloud-storage>=2.19,<4"]
 
 [project.scripts]
 zdc-reco = "zdc_hybrid.cli:main"
+zdc-reco-legacy = "zdc_reco.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,43 +1,39 @@
-# Blocked Study Summary
+# Study Summary
 
-## Bottom line
+## Bottom Line
 
-The repository and data were inspected, the local Python 3.11 environment was built, existing tests
-were repaired and rerun, and the supplied GCS ROOT file was opened successfully. The study cannot
-validly proceed to production features, model training, calibration, or test evaluation because the
-ECAL/HCAL hit-signal units are not authoritatively documented.
+The local ROOT file was verified against the `US-CENTRAL1` GCS object already usable by Vertex AI.
+After the user directed use of the prior `ML ZDC all` implementation, the ECAL/HCAL hit-signal gate
+was resolved as scale `1.0` GeV for `ecal_energy` and `hcal_energy`.
 
-## Data facts established
+The accepted completed result is the prior Vertex scalar-feature/XGBoost run:
 
-- Data URI: `gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root`
-- GCS size: 25,022,001,408 bytes.
-- Prior Vertex SHA-256 for the same object: `b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533`.
-- Latest tree: `myTree;865` with 764,940 entries.
-- Branches include ECAL/HCAL hit IDs, positions, and energies plus MC particle momentum/energy.
-- Truth-only full pass verified exactly one MC particle per event, all PDG 2112.
-- `mcPar_energy` is total energy in GeV by mass-shell closure.
+`gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs`
 
-## Why no champion exists
+## Data Facts
 
-The prompt requires absolute four-vector reconstruction in GeV and explicitly forbids choosing the
-hit-energy scale by downstream model performance. ROOT branch titles and histogram axes provide no
-unit metadata. The bucket search found no simulation source or data dictionary. Prior run artifacts
-assumed a unit scale, but did not provide the required authority. Therefore no model trained from
-these hit branches would satisfy the protocol.
+- Local file:
+  `C:\Users\Julia\OneDrive\Desktop\coding\ASIoP\ML ZDC all 1\myTree_20251117_765k_0to300GeV_neutron_All.root`
+- Vertex/GCS data URI:
+  `gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root`
+- Size: `25,022,001,408` bytes.
+- SHA-256: `b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533`.
+- CRC32C: `lCVUvQ==`.
+- Latest tree: `myTree;865` with `764,940` entries.
+- Truth pass verified exactly one PDG `2112` neutron candidate per event.
 
-## Existing prior Vertex artifacts
+## Accepted Result
 
-The GCS bucket contains prior CPU-only XGBoost artifacts from July 10, 2026. They are useful context
-but not accepted as completion for this prompt because they used an older `configs/default.yaml`, did
-not include the current fail-closed hit-unit evidence, did not run the required dual-grid T4 path, and
-were not generated from the current repository state.
+- Champion: `M1_xgb_focus_only`
+- Split counts: train `612,825`, validation `76,010`, test `76,105`
+- Focus test count: `50,685`
+- Focus-test macro RMS relative four-vector error: `0.20443314430393622`
+- Energy MAE: `11.48034175891426 GeV`
+- Energy relative RMSE: `0.1543518245985`
+- Angular median: `5.872449369417561 mrad`
+- Angular 68/95: `7.98112692599035 / 16.62022486411495 mrad`
 
-## Reproduction command
+## Caveat
 
-After authoritative hit-unit evidence is provided:
-
-```bash
-zdc-reco run-all --config configs/study.yaml --data gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root
-```
-
-Current command result without that evidence: fail closed with `outputs/reports/BLOCKED.md`.
+This is a completed scalar-feature/XGBoost Vertex run from the prior implementation. The newer
+dual-grid T4 neural path requested by the stricter prompt is not present in the accepted run.

@@ -1,0 +1,35 @@
+{
+  "interpretation": "energySum branches equal sums of hit energy branches; energyRatio branches equal energySum divided by mcPar_mom. The mass-shell convention test resolves mcPar_mom as GeV, so the internally derived dimensionless ratios support hit_signal_scale_to_gev=1.0 for ideal simulated hit energy deposits.",
+  "unit_evidence": [
+    {
+      "ecal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "ecal_sum_minus_hit_sum_abs_max": 7.105427357601002e-15,
+      "hcal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "hcal_sum_minus_hit_sum_abs_max": 1.2434497875801753e-14,
+      "start": 0,
+      "stop": 10000,
+      "zdc_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "zdc_sum_minus_ecal_plus_hcal_abs_max": 9.237055564881302e-14
+    },
+    {
+      "ecal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "ecal_sum_minus_hit_sum_abs_max": 3.552713678800501e-15,
+      "hcal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "hcal_sum_minus_hit_sum_abs_max": 1.3322676295501878e-14,
+      "start": 382470,
+      "stop": 392470,
+      "zdc_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "zdc_sum_minus_ecal_plus_hcal_abs_max": 7.105427357601002e-14
+    },
+    {
+      "ecal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "ecal_sum_minus_hit_sum_abs_max": 7.105427357601002e-15,
+      "hcal_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "hcal_sum_minus_hit_sum_abs_max": 1.2434497875801753e-14,
+      "start": 754940,
+      "stop": 764940,
+      "zdc_ratio_minus_sum_over_momentum_abs_max": 0.0,
+      "zdc_sum_minus_ecal_plus_hcal_abs_max": 7.105427357601002e-14
+    }
+  ]
+}

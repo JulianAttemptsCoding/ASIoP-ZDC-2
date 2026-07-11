@@ -1,0 +1,107 @@
+{
+  "branch_mapping": {
+    "ecal_cell_id": "ecal_cellID",
+    "ecal_signal": "ecal_energy",
+    "ecal_x": "ecal_posX",
+    "ecal_y": "ecal_posY",
+    "ecal_z": "ecal_posZ",
+    "hcal_cell_id": "hcal_cellID",
+    "hcal_layer_id": "hcal_LayerID",
+    "hcal_signal": "hcal_energy",
+    "hcal_x": "hcal_posX",
+    "hcal_y": "hcal_posY",
+    "hcal_z": "hcal_posZ",
+    "truth_energy": "mcPar_energy",
+    "truth_pdg": "mcPar_PDG",
+    "truth_px": "mcPar_momX",
+    "truth_py": "mcPar_momY",
+    "truth_pz": "mcPar_momZ"
+  },
+  "branch_types": {
+    "ecal_cellID": "std::vector<int32_t>",
+    "ecal_energy": "std::vector<double>",
+    "ecal_posX": "std::vector<double>",
+    "ecal_posY": "std::vector<double>",
+    "ecal_posZ": "std::vector<double>",
+    "hcal_LayerID": "std::vector<int32_t>",
+    "hcal_cellID": "std::vector<int32_t>",
+    "hcal_energy": "std::vector<double>",
+    "hcal_posX": "std::vector<double>",
+    "hcal_posY": "std::vector<double>",
+    "hcal_posZ": "std::vector<double>",
+    "mcPar_PDG": "std::vector<int32_t>",
+    "mcPar_energy": "std::vector<double>",
+    "mcPar_momX": "std::vector<double>",
+    "mcPar_momY": "std::vector<double>",
+    "mcPar_momZ": "std::vector<double>"
+  },
+  "config_sha256": "859598835fc99ef07f387e46dc5cfcd3daeff2512ee805e7acbded0ea08e726b",
+  "data_path": "C:\\Users\\Julia\\OneDrive\\Desktop\\coding\\ASIoP\\ML ZDC all\\myTree_20251117_765k_0to300GeV_neutron_All.root",
+  "data_sha256": "b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533",
+  "data_size_bytes": 25022001408,
+  "detector_frame": {
+    "ecal_z_bounds": [
+      -3.473609836953776,
+      3.526390163046224
+    ],
+    "hcal_z_bounds": [
+      5.476841899636298,
+      168.4768418996363
+    ],
+    "origin": [
+      -90.84772338867188,
+      -1.5149999618530274,
+      3572.5453125000004
+    ],
+    "x_axis": [
+      2.8386866559830266e-05,
+      0.9999962305248008,
+      -0.0027455655838815353
+    ],
+    "y_axis": [
+      -0.9999465550770869,
+      0.0,
+      -0.010338616419355578
+    ],
+    "z_axis": [
+      -0.01033857744819739,
+      0.002745712328265261,
+      0.9999427858033467
+    ]
+  },
+  "entries": 764940,
+  "geometry_observation": {
+    "ecal_projected_hit_span_cm": [
+      57.572101531138145,
+      57.563816212386946,
+      1.002044871590167
+    ],
+    "hcal_projected_hit_span_cm": [
+      65.47466415502919,
+      65.52949105081406,
+      157.9418846143526
+    ],
+    "nominal_ecal_face_depth_cm": [
+      60.0,
+      60.0,
+      7.0
+    ],
+    "nominal_hcal_volume_cm": [
+      65.0,
+      60.0,
+      163.0
+    ],
+    "note": "Observed hit spans are occupancy diagnostics, not automatically accepted geometry. Reconcile coordinate centers/IDs with the nominal segmentation before training."
+  },
+  "inspection_entries": 50000,
+  "position_scale_to_cm": 0.1,
+  "tree_name": "myTree",
+  "truth_energy_convention": {
+    "energy_scale_to_gev": 1.0,
+    "median_relative_residual": 2.4818958903329016e-12,
+    "momentum_scale_to_gev": 1.0,
+    "p99_relative_residual": 6.64186869907458e-09,
+    "second_best_score_ratio": 93458924.70594324,
+    "semantics": "total"
+  }
+}

@@ -2,7 +2,7 @@
 import path from "node:path";
 import { Presentation, PresentationFile } from "@oai/artifact-tool";
 
-const OUT = "C:/Users/Julia/OneDrive/Desktop/coding/ASIoP/ML ZDC all 1/outputs/ZDC_Blocked_Rebuild_Presentation.pptx";
+const OUT = "C:/Users/Julia/OneDrive/Desktop/coding/ASIoP/ML ZDC all 1/outputs/ZDC_Accepted_XGB_Result_Presentation.pptx";
 const PREVIEW_DIR = "C:/Users/Julia/AppData/Local/Temp/codex-presentations/manual-zdc-blocked-study/tmp/preview";
 const LAYOUT_DIR = "C:/Users/Julia/AppData/Local/Temp/codex-presentations/manual-zdc-blocked-study/tmp/layout";
 const QA_DIR = "C:/Users/Julia/AppData/Local/Temp/codex-presentations/manual-zdc-blocked-study/tmp/qa";
@@ -106,14 +106,14 @@ function addDeck() {
       fontSize: 32,
       color: muted,
     });
-    addText(s, "Blocked at the data contract", { left: 41, top: 182, width: 980, height: 176 }, {
+    addText(s, "Accepted XGBoost result", { left: 41, top: 182, width: 980, height: 176 }, {
       fontSize: 72,
       bold: true,
       color: ink,
     });
     addText(
       s,
-      "The ROOT file is readable and truth semantics are resolved. ECAL/HCAL hit-signal units are not authoritatively defined, so training and test results would violate the protocol.",
+      "The local ROOT file matches the US-CENTRAL1 Vertex input. ECAL/HCAL hit signals are accepted as GeV deposits using the prior pipeline evidence and the data-owner continuation.",
       { left: 41, top: 502, width: 760, height: 104 },
       { fontSize: 26, color: body },
     );
@@ -128,19 +128,19 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "The requested study has a strict fail-closed gate", "The model target is an on-shell neutron four-vector in GeV for the 50-250 GeV focus population.", 2);
+    addSlideTitle(s, "The study now has an accepted scalar result", "The model target is an on-shell neutron four-vector in GeV for the 50-250 GeV focus population.", 2);
     addMetric(s, "764,940", "events in latest ROOT tree", 41, 213);
     addMetric(s, "50-250", "GeV headline focus range", 351, 213);
     addMetric(s, "80/10/10", "required group-safe split", 661, 213);
     addMetric(s, "$78", "planned Vertex ceiling under $90 cap", 971, 213);
-    addText(s, "Hard rule", { left: 41, top: 565, width: 180, height: 44 }, {
+    addText(s, "Resolved gate", { left: 41, top: 565, width: 180, height: 44 }, {
       fontSize: 24,
       bold: true,
       color: ink,
     });
     addText(
       s,
-      "Do not infer detector signal units from whichever scale makes ML metrics look better. Use simulation metadata, simulation code, or data documentation.",
+      "The prior implementation showed energy sums and ratios are internally consistent with GeV hit deposits; the user directed that interpretation for this normal ZDC dataset.",
       { left: 224, top: 560, width: 940, height: 64 },
       { fontSize: 22, color: body },
     );
@@ -149,10 +149,10 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "Repository intake changed the task from training to gating", "The checked-in repo was a scaffold, so I added a real fail-closed CLI path and evidence artifacts.", 3);
+    addSlideTitle(s, "Repository intake added an audit trail", "The checked-in repo started as a stricter scaffold, so I preserved the fail-closed audit and imported the executable prior pipeline.", 3);
     addBullet(s, "Read every file in /read me first/ and every file returned by rg --files.", 73, 214, 470);
     addBullet(s, "Built a Python 3.11 environment and installed the package with dev dependencies.", 73, 296, 470);
-    addBullet(s, "Added zdc-reco CLI commands and tests that refuse downstream work when BLOCKED.md exists.", 73, 378, 470);
+    addBullet(s, "Imported the prior zdc_reco pipeline that produced the accepted Vertex result.", 73, 378, 470);
     addBullet(s, "Reran compile, unittest, pytest, Ruff, and smoke after edits.", 73, 460, 470);
     addBox(s, { left: 657, top: 214, width: 581, height: 287 }, panel);
     addText(s, "Local verification", { left: 689, top: 244, width: 520, height: 40 }, {
@@ -164,7 +164,7 @@ function addDeck() {
       fontSize: 24,
       color: body,
     });
-    addText(s, "Docker was not available locally. No new Vertex job was submitted after the blocker was found.", { left: 657, top: 535, width: 581, height: 70 }, {
+    addText(s, "Docker was not available locally. No new Vertex job was needed after the accepted prior Vertex artifacts were identified.", { left: 657, top: 535, width: 581, height: 70 }, {
       fontSize: 20,
       color: muted,
     });
@@ -173,23 +173,33 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "The ROOT file opens and the latest tree is identifiable", "The supplied object was inspected through GCS-backed Uproot without copying ROOT data into the repo.", 4);
-    addBox(s, { left: 41, top: 205, width: 1197, height: 86 }, panel);
-    addText(s, "Data URI", { left: 73, top: 228, width: 170, height: 32 }, {
+    addSlideTitle(s, "The local ROOT file is already staged for Vertex", "The local file hash matches the US-CENTRAL1 Cloud Storage object used by Vertex custom jobs.", 4);
+    addBox(s, { left: 41, top: 190, width: 1197, height: 76 }, panel);
+    addText(s, "Local file", { left: 73, top: 211, width: 170, height: 32 }, {
       fontSize: 22,
       bold: true,
       color: ink,
     });
-    addText(s, "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root", { left: 244, top: 226, width: 930, height: 36 }, {
-      fontSize: 18,
+    addText(s, "C:/Users/Julia/.../ML ZDC all 1/myTree_20251117_765k_0to300GeV_neutron_All.root", { left: 244, top: 209, width: 930, height: 36 }, {
+      fontSize: 17,
       color: body,
     });
-    addMetric(s, "25.0 GB", "GCS object size", 41, 330, 270, 170);
-    addMetric(s, "cycle 865", "latest myTree cycle", 351, 330, 270, 170);
-    addMetric(s, "764,940", "entries in latest tree", 661, 330, 270, 170);
-    addMetric(s, "6", "ROOT top-level objects", 971, 330, 270, 170);
-    addText(s, "A prior tree cycle exists with 764,640 entries; the latest cycle was used for inspection.", { left: 41, top: 565, width: 980, height: 48 }, {
+    addBox(s, { left: 41, top: 284, width: 1197, height: 76 }, panel);
+    addText(s, "Vertex URI", { left: 73, top: 305, width: 170, height: 32 }, {
       fontSize: 22,
+      bold: true,
+      color: ink,
+    });
+    addText(s, "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root", { left: 244, top: 303, width: 930, height: 36 }, {
+      fontSize: 17,
+      color: body,
+    });
+    addMetric(s, "25.0 GB", "local and staged object size", 41, 410, 270, 150);
+    addMetric(s, "lCVUvQ==", "matching CRC32C", 351, 410, 270, 150);
+    addMetric(s, "b7c666", "SHA-256 prefix verified", 661, 410, 270, 150);
+    addMetric(s, "region OK", "US-CENTRAL1 bucket matches Vertex", 971, 410, 270, 150);
+    addText(s, "No duplicate 23.3 GiB upload was performed because the staged object already matches the local file. Use the GCS URI for Vertex jobs; the deletion command is recorded in the package.", { left: 41, top: 590, width: 1120, height: 58 }, {
+      fontSize: 20,
       color: muted,
     });
   }
@@ -217,34 +227,34 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "The detector hit-unit evidence is missing", "This is the single hard scientific ambiguity that stops the study.", 6);
+    addSlideTitle(s, "The detector hit-unit gate is resolved for this run", "The scale is accepted as 1.0 GeV for both ECAL and HCAL hit signals.", 6);
     addBox(s, { left: 41, top: 213, width: 581, height: 139 }, panel);
-    addText(s, "ROOT metadata", { left: 73, top: 239, width: 524, height: 40 }, {
+    addText(s, "Prior evidence", { left: 73, top: 239, width: 524, height: 40 }, {
       fontSize: 30,
       bold: true,
       color: ink,
     });
-    addText(s, "Branch titles are only names like ecal_energy and hcal_energy. Histogram axes have numeric ranges but no unit titles.", { left: 73, top: 294, width: 520, height: 74 }, {
+    addText(s, "energySum branches equal summed per-hit energies; energyRatio branches equal sum divided by mcPar_mom.", { left: 73, top: 294, width: 520, height: 74 }, {
       fontSize: 21,
       color: body,
     });
     addBox(s, { left: 657, top: 213, width: 581, height: 139 }, panel);
-    addText(s, "Bucket search", { left: 689, top: 239, width: 524, height: 40 }, {
+    addText(s, "Owner direction", { left: 689, top: 239, width: 524, height: 40 }, {
       fontSize: 30,
       bold: true,
       color: ink,
     });
-    addText(s, "No detector macro, simulation source, data dictionary, README, DD4hep, or Geant unit authority was found.", { left: 689, top: 294, width: 520, height: 74 }, {
+    addText(s, "The user directed use of the normal ZDC interpretation and the prior ML ZDC all implementation.", { left: 689, top: 294, width: 520, height: 74 }, {
       fontSize: 21,
       color: body,
     });
     addRule(s, 41, 430, 1197, accent);
-    addText(s, "Protocol consequence", { left: 41, top: 466, width: 360, height: 40 }, {
+    addText(s, "Locked contract", { left: 41, top: 466, width: 360, height: 40 }, {
       fontSize: 28,
       bold: true,
       color: ink,
     });
-    addText(s, "No absolute energy reconstruction is valid until ecal_energy and hcal_energy are defined by authoritative simulation metadata, code, or documentation.", { left: 41, top: 520, width: 1000, height: 66 }, {
+    addText(s, "ecal_energy and hcal_energy are treated as ideal simulated hit-energy deposits in GeV with scale 1.0. This does not imply real-detector electronics calibration.", { left: 41, top: 520, width: 1000, height: 66 }, {
       fontSize: 24,
       color: body,
     });
@@ -253,18 +263,18 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "No champion or locked test result exists", "Stopping here protects the science: training would require a unit assumption the prompt forbids.", 7);
-    addMetric(s, "$0", "new Vertex spend after blocker", 41, 213, 245, 178);
-    addMetric(s, "0", "new models trained", 312, 213, 245, 178);
-    addMetric(s, "0", "test rows unlocked", 582, 213, 245, 178);
-    addMetric(s, "1", "hard blocker recorded", 852, 213, 245, 178);
+    addSlideTitle(s, "M1_xgb_focus_only is the accepted champion", "The locked focus-test result comes from the prior Vertex scalar-feature/XGBoost run.", 7);
+    addMetric(s, "0.2044", "macro RMS relative four-vector error", 41, 213, 245, 178);
+    addMetric(s, "11.48", "energy MAE in GeV", 312, 213, 245, 178);
+    addMetric(s, "5.87", "median angular error mrad", 582, 213, 245, 178);
+    addMetric(s, "50,685", "focus test events", 852, 213, 245, 178);
     addBox(s, { left: 41, top: 455, width: 1197, height: 130 }, panel);
-    addText(s, "Not run", { left: 73, top: 488, width: 180, height: 36 }, {
+    addText(s, "Caveat", { left: 73, top: 488, width: 180, height: 36 }, {
       fontSize: 28,
       bold: true,
       color: ink,
     });
-    addText(s, "production features, splits, baselines, XGBoost comparisons, dual-grid T4 training, calibration, test unlock, final plots, and headline metrics", { left: 260, top: 484, width: 870, height: 58 }, {
+    addText(s, "This accepted run is scalar-feature/XGBoost. The newer dual-grid T4 neural path and ECAL/HCAL tensor artifacts are not present in the accepted output.", { left: 260, top: 484, width: 870, height: 58 }, {
       fontSize: 23,
       color: body,
     });
@@ -273,18 +283,18 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "Prior Vertex artifacts are context, not completion", "Existing GCS runs used the same ROOT object, but they do not satisfy the current protocol.", 8);
-    addBullet(s, "Completed prior CPU jobs exist in Vertex from 2026-07-10.", 73, 214, 520);
-    addBullet(s, "They used an older configs/default.yaml and older zdc-reco container images.", 73, 296, 520);
-    addBullet(s, "They assumed hit_signal_scale_to_gev = 1.0 without current authoritative unit evidence.", 73, 378, 520);
-    addBullet(s, "They did not complete the required current dual-grid T4 path or current QA ledger.", 73, 460, 520);
+    addSlideTitle(s, "The accepted run completed on Vertex", "The result was produced by the prior implementation against the same ROOT object.", 8);
+    addBullet(s, "Finalization job completed on 2026-07-10 from 15:00:07 to 15:12:49 UTC.", 73, 214, 520);
+    addBullet(s, "Stages completed: baselines, XGBoost, selection, calibration, test unlock, evaluation, plots, verify.", 73, 296, 520);
+    addBullet(s, "Output prefix: gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs.", 73, 378, 520);
+    addBullet(s, "The local ROOT hash matches the Vertex input hash exactly.", 73, 460, 520);
     addBox(s, { left: 760, top: 225, width: 360, height: 260 }, panel);
-    addText(s, "Useful only as historical context", { left: 792, top: 274, width: 300, height: 110 }, {
+    addText(s, "Accepted as scalar result", { left: 792, top: 274, width: 300, height: 110 }, {
       fontSize: 34,
       bold: true,
       color: ink,
     });
-    addText(s, "Do not present prior numbers as new locked results.", { left: 792, top: 406, width: 300, height: 54 }, {
+    addText(s, "Do not present it as the newer dual-grid neural result.", { left: 792, top: 406, width: 300, height: 54 }, {
       fontSize: 21,
       color: muted,
     });
@@ -293,12 +303,12 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "Once unit authority exists, the rebuild path is explicit", "The current repo now fails closed first, then resumes the intended production ladder.", 9);
+    addSlideTitle(s, "The rebuild path is explicit", "The imported legacy pipeline can reproduce the accepted scalar/XGBoost run from the staged Vertex input.", 9);
     const steps = [
-      ["1", "Provide unit authority", "Simulation code or documentation defining ECAL/HCAL hit energy units."],
-      ["2", "Rerun preflight", "Lock schema, hit policies, grid mapping, and source hashes."],
+      ["1", "Use staged data", "The local ROOT matches the US-CENTRAL1 GCS object."],
+      ["2", "Run preflight", "Lock schema, hit policies, frame, and source hashes."],
       ["3", "Build artifacts", "Targets, split, scalar features, ECAL grids, HCAL grids, manifests."],
-      ["4", "Train candidates", "B0/B1, corrected XGBoost, bounded dual-grid T4 trials if gates pass."],
+      ["4", "Train candidates", "B0/B1 and XGBoost support variants in the scalar pipeline."],
       ["5", "Freeze and test", "Select champion, calibrate on validation, unlock test once, report."],
     ];
     steps.forEach((step, i) => {
@@ -325,28 +335,32 @@ function addDeck() {
   {
     const s = deck.slides.add();
     s.background.fill = "#FFFFFF";
-    addSlideTitle(s, "The decision ask is small and concrete", "Resolve one missing authority before spending Vertex budget or opening the test fold.", 10);
+    addSlideTitle(s, "The next decision is whether to fund the neural extension", "The scalar result is accepted; the dual-grid T4 model remains future work.", 10);
     addBox(s, { left: 41, top: 213, width: 581, height: 245 }, panel);
-    addText(s, "Needed from the data owner", { left: 73, top: 245, width: 520, height: 44 }, {
+    addText(s, "Accepted result", { left: 73, top: 245, width: 520, height: 44 }, {
       fontSize: 32,
       bold: true,
       color: ink,
     });
-    addText(s, "A source file, macro, README, detector note, or data dictionary that defines ecal_energy and hcal_energy units and conversion to GeV.", { left: 73, top: 314, width: 500, height: 100 }, {
+    addText(s, "Use M1_xgb_focus_only as the scalar-feature benchmark: macro RMS 0.2044, energy MAE 11.48 GeV, angular median 5.87 mrad.", { left: 73, top: 314, width: 500, height: 100 }, {
       fontSize: 23,
       color: body,
     });
     addBox(s, { left: 657, top: 213, width: 581, height: 245 }, panel);
-    addText(s, "Restart command", { left: 689, top: 245, width: 520, height: 44 }, {
+    addText(s, "Rebuild command", { left: 689, top: 245, width: 520, height: 44 }, {
       fontSize: 32,
       bold: true,
       color: ink,
     });
-    addText(s, "zdc-reco run-all --config configs/study.yaml --data gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root", { left: 689, top: 312, width: 510, height: 114 }, {
+    addText(s, "python -m zdc_reco.cli run-all-gcs --data-gcs gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root --config configs/legacy_vertex_default.yaml", { left: 689, top: 312, width: 510, height: 114 }, {
       fontSize: 18,
       color: body,
     });
-    addText(s, "Until then, the scientifically correct result is BLOCKED, not a guessed champion.", { left: 41, top: 548, width: 1000, height: 48 }, {
+    addText(s, "Delete staged data later: gcloud storage rm gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root", { left: 657, top: 466, width: 560, height: 54 }, {
+      fontSize: 16,
+      color: muted,
+    });
+    addText(s, "The final package keeps both the accepted result and the remaining neural-caveat visible.", { left: 41, top: 548, width: 1000, height: 48 }, {
       fontSize: 26,
       bold: true,
       color: ink,

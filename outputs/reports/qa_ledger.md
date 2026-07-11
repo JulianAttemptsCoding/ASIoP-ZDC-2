@@ -2,12 +2,24 @@
 
 Created UTC: 2026-07-11. This ledger records technical evidence and actions only.
 
+## Final Status Note
+
+This original ledger records the initial fail-closed pass. It is superseded for final status by
+`outputs/reports/qa_ledger_continuation_20260711.md`, where the user-directed prior implementation
+evidence resolved the ECAL/HCAL hit-signal gate and accepted the scalar-feature/XGBoost Vertex run.
+The original `BLOCKED.md` artifact was preserved as
+`outputs/reports/BLOCKED_SUPERSEDED_BY_HIT_UNIT_EVIDENCE.md`.
+
 ## Scope
 
-Input data: `gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root`.
-Task: execute the single-neutron ZDC four-vector study under the repository protocol. Outcome:
-blocked at Phase 1 because ECAL/HCAL hit-signal units and GeV conversion are not authoritatively
-defined.
+Input data:
+`C:\Users\Julia\OneDrive\Desktop\coding\ASIoP\ML ZDC all 1\myTree_20251117_765k_0to300GeV_neutron_All.root`.
+Vertex/GCS staged URI:
+`gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root`.
+Task: execute the single-neutron ZDC four-vector study under the repository protocol. Initial
+outcome: blocked at Phase 1 because ECAL/HCAL hit-signal units and GeV conversion were not
+authoritatively defined in this repo alone. Final continuation outcome: the user-directed sibling
+repo evidence resolved that gate for the accepted scalar-feature/XGBoost path.
 
 ## Repository Intake
 
@@ -36,10 +48,14 @@ defined.
 | Source edit | n/a | Removed quoted self-type annotation in `calibration.py`. |
 | `.venv ruff check .` | 0 | Passed after lint fix. |
 | `gsutil ls -L <ROOT URI>` | 0 | Object exists, 25,022,001,408 bytes, CRC32C `lCVUvQ==`. |
+| `gcloud storage hash <local ROOT>` | 0 | Local CRC32C `lCVUvQ==` and MD5 `sQdukAxxUbb+Fh3JDOUjLQ==`; CRC32C matches the staged GCS object. |
+| `Get-FileHash -Algorithm SHA256 <local ROOT>` | 0 | Local SHA-256 `b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533`, matching the prior Vertex fingerprint. |
+| `gcloud storage buckets describe gs://asiop-zdc-1-zdc-reco-us-central1` | 0 | Bucket is `US-CENTRAL1`, suitable as Vertex custom-job input staging for project `asiop-zdc-1`. |
 | Uproot ROOT metadata open | 0 | Found `myTree;865`, `myTree;864`, ECAL/HCAL histograms, and branch names. |
 | Truth-only full pass over `mcPar_*` | 0 | `truth_summary.json`; one PDG 2112 candidate per event; mass shell decisive. |
 | Bucket/repo search for unit authority | 0 | No authoritative simulation code/docs found. |
 | `python -m zdc_hybrid.cli preflight ...` | nonzero | Correct fail-closed behavior; wrote `BLOCKED.md`. |
+| Local-path `python -m zdc_hybrid.cli preflight ... --output-dir outputs\local_input_preflight` | 2 | Correct fail-closed behavior from the supplied local ROOT path; wrote local metadata and blocker. |
 | `docker --version` | 1 | Docker is not installed locally; Docker verification could not run. |
 | `nvidia-smi` | 1 | No local NVIDIA utility; no local GPU evidence. |
 | Presentation render and overflow QA | 0 | `slides_test.py` passed; `presentation_preview_montage.png` visually inspected. |
@@ -55,6 +71,8 @@ defined.
 - Fixed Ruff `UP037` in `src/zdc_hybrid/calibration.py`.
 - Generated `environment.lock.txt` from the actual `.venv` environment.
 - Generated evidence artifacts under `outputs/preflight` and `outputs/reports`.
+- Added `outputs/reports/vertex_data_staging.json` and `outputs/local_input_preflight/*` for the
+  newly supplied local ROOT path and its matching Vertex/GCS staged object.
 
 ## Phase 0 Audit
 
@@ -65,8 +83,9 @@ Phase 0 partially passed and then hit two local execution defects:
 - Docker cannot be verified locally because Docker is not installed. This remains a reproducibility
   gap, but the current hard stop is earlier: unresolved hit units.
 - The repo was not a Git repository at intake, so there was no starting commit/status to record.
-- ROOT data were located in GCS and opened from the supplied URI. The ROOT file was not copied into
-  the repository.
+- ROOT data were located at the supplied local path and verified against the existing `US-CENTRAL1`
+  GCS object by size and CRC32C. Because the staged object already matched the local file, no duplicate
+  23.3 GiB upload was performed. The ROOT file was not copied into the repository.
 
 ## Phase 1 Audit
 
@@ -105,7 +124,7 @@ Action:
 | 12 | NOT REACHED | No final predictions produced. |
 | 13 | NOT REACHED | Grid mapping not fully locked because Phase 1 stopped earlier. |
 | 14 | FAIL | Hit-signal units/conversion lack authoritative evidence. |
-| 15 | PARTIAL | Data URI, size, CRC32C, prior SHA, and local evidence exist; no current full SHA recompute. |
+| 15 | PASS | Local path, Vertex/GCS URI, size, CRC32C/MD5, local SHA-256, bucket region, and deletion command are recorded. |
 | 16 | PASS | Single primary neutron verified for all 764,940 events. |
 | 17 | NOT REACHED | No new split frozen under current repo. |
 | 18 | NOT REACHED | Duplicate/fingerprint split gates not run under current repo. |
@@ -139,7 +158,7 @@ Action:
 | 46 | PARTIAL | Unit/lint/smoke pass; Docker unavailable; integration/tiny ROOT absent. |
 | 47 | PARTIAL | New source is not placeholder training, but generated package metadata exists locally. |
 | 48 | NOT REACHED | No new Vertex submission; price lookup not needed before blocked Phase 1. |
-| 49 | PASS | Actual new Vertex spend is $0. |
+| 49 | PASS | Actual new Vertex spend is $0; no duplicate 23.3 GiB upload was needed because the local file matched the existing staged object. |
 | 50 | NOT REACHED | No new Vertex job submitted. |
 | 51 | PASS | No new endpoint or persistent resource created. |
 | 52 | PASS | No budget alert was treated as a hard cap. |

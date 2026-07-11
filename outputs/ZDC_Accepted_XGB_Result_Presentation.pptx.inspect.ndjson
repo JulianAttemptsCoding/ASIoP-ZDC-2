@@ -1,0 +1,178 @@
+{"kind":"deck","id":"pr/183zzc","name":"Deck"}
+{"kind":"layout","layoutId":"7469a018-cd2d-4d7a-8c58-2f62fa46e183","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ffbfde83-17bb-4d92-a0b3-0dc0e453d44d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/wphjev","slide":1,"title":"ZDC Four-Vector Study","textShapes":5}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":1,"text":"ZDC Four-Vector Study","textPreview":"ZDC Four-Vector Study","textChars":21,"textLines":1,"bbox":[41,41,520,60]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":1,"text":"Accepted XGBoost result","textPreview":"Accepted XGBoost result","textChars":23,"textLines":1,"bbox":[41,182,980,176]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":1,"text":"The local ROOT file matches the US-CENTRAL1 Vertex input. ECAL/HCAL hit signals are accepted as GeV deposits using the prior pipeline evidence and the data-owner continuation.","textPreview":"The local ROOT file matches the US-CENTRAL1 Vertex input. ECAL/HCAL hit signals are accepted as GeV deposits using the prior pipeline evi...","textChars":175,"textLines":1,"bbox":[41,502,760,104]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":1,"text":"2026-07-11","textPreview":"2026-07-11","textChars":10,"textLines":1,"bbox":[862,41,376,60]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"notes","id":"nt/wphjev","slide":1,"text":""}
+{"kind":"slide","id":"sl/kcrvkr","slide":2,"title":"The study now has an accepted scalar result","textShapes":13}
+{"kind":"textbox","id":"sh/72x4nap4","slide":2,"text":"The study now has an accepted scalar result","textPreview":"The study now has an accepted scalar result","textChars":43,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":2,"text":"The model target is an on-shell neutron four-vector in GeV for the 50-250 GeV focus population.","textPreview":"The model target is an on-shell neutron four-vector in GeV for the 50-250 GeV focus population.","textChars":95,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":2,"bbox":[41,213,245,178]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":2,"text":"764,940","textPreview":"764,940","textChars":7,"textLines":1,"bbox":[65,239,197,70]}
+{"kind":"textbox","id":"sh/0z61032l","slide":2,"text":"events in latest ROOT tree","textPreview":"events in latest ROOT tree","textChars":26,"textLines":1,"bbox":[65,317,197,56]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":2,"bbox":[351,213,245,178]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":2,"text":"50-250","textPreview":"50-250","textChars":6,"textLines":1,"bbox":[375,239,197,70]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":2,"text":"GeV headline focus range","textPreview":"GeV headline focus range","textChars":24,"textLines":1,"bbox":[375,317,197,56]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":2,"bbox":[661,213,245,178]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":2,"text":"80/10/10","textPreview":"80/10/10","textChars":8,"textLines":1,"bbox":[685,239,197,70]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":2,"text":"required group-safe split","textPreview":"required group-safe split","textChars":25,"textLines":1,"bbox":[685,317,197,56]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":2,"bbox":[971,213,245,178]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":2,"text":"$78","textPreview":"$78","textChars":3,"textLines":1,"bbox":[995,239,197,70]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":2,"text":"planned Vertex ceiling under $90 cap","textPreview":"planned Vertex ceiling under $90 cap","textChars":36,"textLines":1,"bbox":[995,317,197,56]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":2,"text":"Resolved gate","textPreview":"Resolved gate","textChars":13,"textLines":1,"bbox":[41,565,180,44]}
+{"kind":"textbox","id":"sh/83itgfml","slide":2,"text":"The prior implementation showed energy sums and ratios are internally consistent with GeV hit deposits; the user directed that interpretation for this normal ZDC dataset.","textPreview":"The prior implementation showed energy sums and ratios are internally consistent with GeV hit deposits; the user directed that interpreta...","textChars":170,"textLines":1,"bbox":[224,560,940,64]}
+{"kind":"notes","id":"nt/kcrvkr","slide":2,"text":""}
+{"kind":"slide","id":"sl/e16nnz","slide":3,"title":"Repository intake added an audit trail","textShapes":10}
+{"kind":"textbox","id":"sh/cj6tovah","slide":3,"text":"Repository intake added an audit trail","textPreview":"Repository intake added an audit trail","textChars":38,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":3,"text":"The checked-in repo started as a stricter scaffold, so I preserved the fail-closed audit and imported the executable prior pipeline.","textPreview":"The checked-in repo started as a stricter scaffold, so I preserved the fail-closed audit and imported the executable prior pipeline.","textChars":132,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/5gbq1ory","slide":3,"bbox":[73,222,10,10]}
+{"kind":"textbox","id":"sh/cvixczed","slide":3,"text":"Read every file in /read me first/ and every file returned by rg --files.","textPreview":"Read every file in /read me first/ and every file returned by rg --files.","textChars":73,"textLines":1,"bbox":[95,214,470,54]}
+{"kind":"shape","id":"sh/nap4r65w","slide":3,"bbox":[73,304,10,10]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":3,"text":"Built a Python 3.11 environment and installed the package with dev dependencies.","textPreview":"Built a Python 3.11 environment and installed the package with dev dependencies.","textChars":80,"textLines":1,"bbox":[95,296,470,54]}
+{"kind":"shape","id":"sh/1orytsvu","slide":3,"bbox":[73,386,10,10]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":3,"text":"Imported the prior zdc_reco pipeline that produced the accepted Vertex result.","textPreview":"Imported the prior zdc_reco pipeline that produced the accepted Vertex result.","textChars":78,"textLines":1,"bbox":[95,378,470,54]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":3,"bbox":[73,468,10,10]}
+{"kind":"textbox","id":"sh/zed8v6ps","slide":3,"text":"Reran compile, unittest, pytest, Ruff, and smoke after edits.","textPreview":"Reran compile, unittest, pytest, Ruff, and smoke after edits.","textChars":61,"textLines":1,"bbox":[95,460,470,54]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":3,"bbox":[657,214,581,287]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":3,"text":"Local verification","textPreview":"Local verification","textChars":18,"textLines":1,"bbox":[689,244,520,40]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":3,"text":"compileall passed\nunittest: 11 tests OK\npytest: 11 passed\nRuff: all checks passed\nsmoke: perfect self-check","textPreview":"compileall passed | unittest: 11 tests OK | pytest: 11 passed | Ruff: all checks passed | smoke: perfect self-check","textChars":107,"textLines":5,"bbox":[689,306,520,150]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":3,"text":"Docker was not available locally. No new Vertex job was needed after the accepted prior Vertex artifacts were identified.","textPreview":"Docker was not available locally. No new Vertex job was needed after the accepted prior Vertex artifacts were identified.","textChars":121,"textLines":1,"bbox":[657,535,581,70]}
+{"kind":"notes","id":"nt/e16nnz","slide":3,"text":""}
+{"kind":"slide","id":"sl/bkfpkk","slide":4,"title":"The local ROOT file is already staged for Vertex","textShapes":16}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":4,"text":"The local ROOT file is already staged for Vertex","textPreview":"The local ROOT file is already staged for Vertex","textChars":48,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":4,"text":"The local file hash matches the US-CENTRAL1 Cloud Storage object used by Vertex custom jobs.","textPreview":"The local file hash matches the US-CENTRAL1 Cloud Storage object used by Vertex custom jobs.","textChars":92,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/e9cvixcz","slide":4,"bbox":[41,190,1197,76]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":4,"text":"Local file","textPreview":"Local file","textChars":10,"textLines":1,"bbox":[73,211,170,32]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":4,"text":"C:/Users/Julia/.../ML ZDC all 1/myTree_20251117_765k_0to300GeV_neutron_All.root","textPreview":"C:/Users/Julia/.../ML ZDC all 1/myTree_20251117_765k_0to300GeV_neutron_All.root","textChars":79,"textLines":1,"bbox":[244,209,930,36]}
+{"kind":"shape","id":"sh/lwval87e","slide":4,"bbox":[41,284,1197,76]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":4,"text":"Vertex URI","textPreview":"Vertex URI","textChars":10,"textLines":1,"bbox":[73,305,170,32]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":4,"text":"gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root","textPreview":"gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root","textChars":90,"textLines":1,"bbox":[244,303,930,36]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":4,"bbox":[41,410,270,150]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":4,"text":"25.0 GB","textPreview":"25.0 GB","textChars":7,"textLines":1,"bbox":[65,436,222,70]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":4,"text":"local and staged object size","textPreview":"local and staged object size","textChars":28,"textLines":1,"bbox":[65,514,222,56]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":4,"bbox":[351,410,270,150]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":4,"text":"lCVUvQ==","textPreview":"lCVUvQ==","textChars":8,"textLines":1,"bbox":[375,436,222,70]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":4,"text":"matching CRC32C","textPreview":"matching CRC32C","textChars":15,"textLines":1,"bbox":[375,514,222,56]}
+{"kind":"shape","id":"sh/9knih4by","slide":4,"bbox":[661,410,270,150]}
+{"kind":"textbox","id":"sh/kzupwb2h","slide":4,"text":"b7c666","textPreview":"b7c666","textChars":6,"textLines":1,"bbox":[685,436,222,70]}
+{"kind":"textbox","id":"sh/ra5gbq1o","slide":4,"text":"SHA-256 prefix verified","textPreview":"SHA-256 prefix verified","textChars":23,"textLines":1,"bbox":[685,514,222,56]}
+{"kind":"shape","id":"sh/2p8nqxs7","slide":4,"bbox":[971,410,270,150]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":4,"text":"region OK","textPreview":"region OK","textChars":9,"textLines":1,"bbox":[995,436,222,70]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":4,"text":"US-CENTRAL1 bucket matches Vertex","textPreview":"US-CENTRAL1 bucket matches Vertex","textChars":33,"textLines":1,"bbox":[995,514,222,56]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":4,"text":"No duplicate 23.3 GiB upload was performed because the staged object already matches the local file. Use the GCS URI for Vertex jobs; the deletion command is recorded in the package.","textPreview":"No duplicate 23.3 GiB upload was performed because the staged object already matches the local file. Use the GCS URI for Vertex jobs; the...","textChars":182,"textLines":1,"bbox":[41,590,1120,58]}
+{"kind":"notes","id":"nt/bkfpkk","slide":4,"text":""}
+{"kind":"slide","id":"sl/bgb4kr","slide":5,"title":"The truth contract is resolved, not guessed","textShapes":13}
+{"kind":"textbox","id":"sh/epkzupwb","slide":5,"text":"The truth contract is resolved, not guessed","textPreview":"The truth contract is resolved, not guessed","textChars":43,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":5,"text":"A full truth-branch pass verified the particle identity and total-energy semantics.","textPreview":"A full truth-branch pass verified the particle identity and total-energy semantics.","textChars":83,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/wval87ed","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":5,"bbox":[41,213,270,190]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[65,239,222,70]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":5,"text":"MC particle per event","textPreview":"MC particle per event","textChars":21,"textLines":1,"bbox":[65,317,222,56]}
+{"kind":"shape","id":"sh/w7mp0bi9","slide":5,"bbox":[351,213,270,190]}
+{"kind":"textbox","id":"sh/7u54zido","slide":5,"text":"2112","textPreview":"2112","textChars":4,"textLines":1,"bbox":[375,239,222,70]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":5,"text":"PDG code for all events","textPreview":"PDG code for all events","textChars":23,"textLines":1,"bbox":[375,317,222,56]}
+{"kind":"shape","id":"sh/onyd0z61","slide":5,"bbox":[661,213,270,190]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":5,"text":"7.7e-17","textPreview":"7.7e-17","textChars":7,"textLines":1,"bbox":[685,239,222,70]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":5,"text":"median shell residual","textPreview":"median shell residual","textChars":21,"textLines":1,"bbox":[685,317,222,56]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":5,"bbox":[971,213,270,190]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":5,"text":"300.001","textPreview":"300.001","textChars":7,"textLines":1,"bbox":[995,239,222,70]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":5,"text":"max truth energy GeV","textPreview":"max truth energy GeV","textChars":20,"textLines":1,"bbox":[995,317,222,56]}
+{"kind":"shape","id":"sh/6tovahoz","slide":5,"bbox":[41,482,1197,95]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":5,"text":"Primary rule","textPreview":"Primary rule","textChars":12,"textLines":1,"bbox":[73,512,220,36]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":5,"text":"Use the only MC particle in the event after verifying every event has exactly one candidate and all candidates are neutrons.","textPreview":"Use the only MC particle in the event after verifying every event has exactly one candidate and all candidates are neutrons.","textChars":124,"textLines":1,"bbox":[305,510,850,44]}
+{"kind":"notes","id":"nt/bgb4kr","slide":5,"text":""}
+{"kind":"slide","id":"sl/ew38gg","slide":6,"title":"The detector hit-unit gate is resolved for this run","textShapes":9}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":6,"text":"The detector hit-unit gate is resolved for this run","textPreview":"The detector hit-unit gate is resolved for this run","textChars":51,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":6,"text":"The scale is accepted as 1.0 GeV for both ECAL and HCAL hit signals.","textPreview":"The scale is accepted as 1.0 GeV for both ECAL and HCAL hit signals.","textChars":68,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/4r65wjud","slide":6,"bbox":[41,213,581,139]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":6,"text":"Prior evidence","textPreview":"Prior evidence","textChars":14,"textLines":1,"bbox":[73,239,524,40]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":6,"text":"energySum branches equal summed per-hit energies; energyRatio branches equal sum divided by mcPar_mom.","textPreview":"energySum branches equal summed per-hit energies; energyRatio branches equal sum divided by mcPar_mom.","textChars":102,"textLines":1,"bbox":[73,294,520,74]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":6,"bbox":[657,213,581,139]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":6,"text":"Owner direction","textPreview":"Owner direction","textChars":15,"textLines":1,"bbox":[689,239,524,40]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":6,"text":"The user directed use of the normal ZDC interpretation and the prior ML ZDC all implementation.","textPreview":"The user directed use of the normal ZDC interpretation and the prior ML ZDC all implementation.","textChars":95,"textLines":1,"bbox":[689,294,520,74]}
+{"kind":"shape","id":"sh/lkjm1cfa","slide":6,"bbox":[41,430,1197,1]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":6,"text":"Locked contract","textPreview":"Locked contract","textChars":15,"textLines":1,"bbox":[41,466,360,40]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":6,"text":"ecal_energy and hcal_energy are treated as ideal simulated hit-energy deposits in GeV with scale 1.0. This does not imply real-detector electronics calibration.","textPreview":"ecal_energy and hcal_energy are treated as ideal simulated hit-energy deposits in GeV with scale 1.0. This does not imply real-detector e...","textChars":160,"textLines":1,"bbox":[41,520,1000,66]}
+{"kind":"notes","id":"nt/ew38gg","slide":6,"text":""}
+{"kind":"slide","id":"sl/50dr0l","slide":7,"title":"M1_xgb_focus_only is the accepted champion","textShapes":13}
+{"kind":"textbox","id":"sh/72x4nap4","slide":7,"text":"M1_xgb_focus_only is the accepted champion","textPreview":"M1_xgb_focus_only is the accepted champion","textChars":42,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":7,"text":"The locked focus-test result comes from the prior Vertex scalar-feature/XGBoost run.","textPreview":"The locked focus-test result comes from the prior Vertex scalar-feature/XGBoost run.","textChars":84,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":7,"bbox":[41,213,245,178]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":7,"text":"0.2044","textPreview":"0.2044","textChars":6,"textLines":1,"bbox":[65,239,197,70]}
+{"kind":"textbox","id":"sh/0z61032l","slide":7,"text":"macro RMS relative four-vector error","textPreview":"macro RMS relative four-vector error","textChars":36,"textLines":1,"bbox":[65,317,197,56]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":7,"bbox":[312,213,245,178]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":7,"text":"11.48","textPreview":"11.48","textChars":5,"textLines":1,"bbox":[336,239,197,70]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":7,"text":"energy MAE in GeV","textPreview":"energy MAE in GeV","textChars":17,"textLines":1,"bbox":[336,317,197,56]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":7,"bbox":[582,213,245,178]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":7,"text":"5.87","textPreview":"5.87","textChars":4,"textLines":1,"bbox":[606,239,197,70]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":7,"text":"median angular error mrad","textPreview":"median angular error mrad","textChars":25,"textLines":1,"bbox":[606,317,197,56]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":7,"bbox":[852,213,245,178]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":7,"text":"50,685","textPreview":"50,685","textChars":6,"textLines":1,"bbox":[876,239,197,70]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":7,"text":"focus test events","textPreview":"focus test events","textChars":17,"textLines":1,"bbox":[876,317,197,56]}
+{"kind":"shape","id":"sh/xobm58z2","slide":7,"bbox":[41,455,1197,130]}
+{"kind":"textbox","id":"sh/83itgfml","slide":7,"text":"Caveat","textPreview":"Caveat","textChars":6,"textLines":1,"bbox":[73,488,180,36]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":7,"text":"This accepted run is scalar-feature/XGBoost. The newer dual-grid T4 neural path and ECAL/HCAL tensor artifacts are not present in the accepted output.","textPreview":"This accepted run is scalar-feature/XGBoost. The newer dual-grid T4 neural path and ECAL/HCAL tensor artifacts are not present in the acc...","textChars":150,"textLines":1,"bbox":[260,484,870,58]}
+{"kind":"notes","id":"nt/50dr0l","slide":7,"text":""}
+{"kind":"slide","id":"sl/cj2nfs","slide":8,"title":"The accepted run completed on Vertex","textShapes":9}
+{"kind":"textbox","id":"sh/8bat47y1","slide":8,"text":"The accepted run completed on Vertex","textPreview":"The accepted run completed on Vertex","textChars":36,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":8,"text":"The result was produced by the prior implementation against the same ROOT object.","textPreview":"The result was produced by the prior implementation against the same ROOT object.","textChars":81,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/18jqh0fe","slide":8,"bbox":[73,222,10,10]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":8,"text":"Finalization job completed on 2026-07-10 from 15:00:07 to 15:12:49 UTC.","textPreview":"Finalization job completed on 2026-07-10 from 15:00:07 to 15:12:49 UTC.","textChars":71,"textLines":1,"bbox":[95,214,520,54]}
+{"kind":"shape","id":"sh/j2t83itg","slide":8,"bbox":[73,304,10,10]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":8,"text":"Stages completed: baselines, XGBoost, selection, calibration, test unlock, evaluation, plots, verify.","textPreview":"Stages completed: baselines, XGBoost, selection, calibration, test unlock, evaluation, plots, verify.","textChars":101,"textLines":1,"bbox":[95,296,520,54]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":8,"bbox":[73,386,10,10]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":8,"text":"Output prefix: gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs.","textPreview":"Output prefix: gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs.","textChars":94,"textLines":1,"bbox":[95,378,520,54]}
+{"kind":"shape","id":"sh/2t83itgf","slide":8,"bbox":[73,468,10,10]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":8,"text":"The local ROOT hash matches the Vertex input hash exactly.","textPreview":"The local ROOT hash matches the Vertex input hash exactly.","textChars":58,"textLines":1,"bbox":[95,460,520,54]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":8,"bbox":[760,225,360,260]}
+{"kind":"textbox","id":"sh/9knih4by","slide":8,"text":"Accepted as scalar result","textPreview":"Accepted as scalar result","textChars":25,"textLines":1,"bbox":[792,274,300,110]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":8,"text":"Do not present it as the newer dual-grid neural result.","textPreview":"Do not present it as the newer dual-grid neural result.","textChars":55,"textLines":1,"bbox":[792,406,300,54]}
+{"kind":"notes","id":"nt/cj2nfs","slide":8,"text":""}
+{"kind":"slide","id":"sl/et1wxz","slide":9,"title":"The rebuild path is explicit","textShapes":18}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":9,"text":"The rebuild path is explicit","textPreview":"The rebuild path is explicit","textChars":28,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":9,"text":"The imported legacy pipeline can reproduce the accepted scalar/XGBoost run from the staged Vertex input.","textPreview":"The imported legacy pipeline can reproduce the accepted scalar/XGBoost run from the staged Vertex input.","textChars":104,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/6tovahoz","slide":9,"bbox":[41,190,92,58]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":9,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[41,198,92,38]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":9,"text":"Use staged data","textPreview":"Use staged data","textChars":15,"textLines":1,"bbox":[160,190,340,34]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":9,"text":"The local ROOT matches the US-CENTRAL1 GCS object.","textPreview":"The local ROOT matches the US-CENTRAL1 GCS object.","textChars":50,"textLines":1,"bbox":[520,190,650,44]}
+{"kind":"shape","id":"sh/61032lsz","slide":9,"bbox":[41,276,92,58]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":9,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[41,284,92,38]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":9,"text":"Run preflight","textPreview":"Run preflight","textChars":13,"textLines":1,"bbox":[160,276,340,34]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":9,"text":"Lock schema, hit policies, frame, and source hashes.","textPreview":"Lock schema, hit policies, frame, and source hashes.","textChars":52,"textLines":1,"bbox":[520,276,650,44]}
+{"kind":"shape","id":"sh/t83itgfm","slide":9,"bbox":[41,362,92,58]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":9,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[41,370,92,38]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":9,"text":"Build artifacts","textPreview":"Build artifacts","textChars":15,"textLines":1,"bbox":[160,362,340,34]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":9,"text":"Targets, split, scalar features, ECAL grids, HCAL grids, manifests.","textPreview":"Targets, split, scalar features, ECAL grids, HCAL grids, manifests.","textChars":67,"textLines":1,"bbox":[520,362,650,44]}
+{"kind":"shape","id":"sh/twra5gbq","slide":9,"bbox":[41,448,92,58]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":9,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[41,456,92,38]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":9,"text":"Train candidates","textPreview":"Train candidates","textChars":16,"textLines":1,"bbox":[160,448,340,34]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":9,"text":"B0/B1 and XGBoost support variants in the scalar pipeline.","textPreview":"B0/B1 and XGBoost support variants in the scalar pipeline.","textChars":58,"textLines":1,"bbox":[520,448,650,44]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":9,"bbox":[41,534,92,58]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":9,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[41,542,92,38]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":9,"text":"Freeze and test","textPreview":"Freeze and test","textChars":15,"textLines":1,"bbox":[160,534,340,34]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":9,"text":"Select champion, calibrate on validation, unlock test once, report.","textPreview":"Select champion, calibrate on validation, unlock test once, report.","textChars":67,"textLines":1,"bbox":[520,534,650,44]}
+{"kind":"notes","id":"nt/et1wxz","slide":9,"text":""}
+{"kind":"slide","id":"sl/yahdcr","slide":10,"title":"The next decision is whether to fund the neural extension","textShapes":9}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":10,"text":"The next decision is whether to fund the neural extension","textPreview":"The next decision is whether to fund the neural extension","textChars":57,"textLines":1,"bbox":[41,36,980,72]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":10,"text":"The scalar result is accepted; the dual-grid T4 model remains future work.","textPreview":"The scalar result is accepted; the dual-grid T4 model remains future work.","textChars":74,"textLines":1,"bbox":[41,112,1050,58]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1184,659,54,25]}
+{"kind":"shape","id":"sh/qxs72x4n","slide":10,"bbox":[41,213,581,245]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":10,"text":"Accepted result","textPreview":"Accepted result","textChars":15,"textLines":1,"bbox":[73,245,520,44]}
+{"kind":"textbox","id":"sh/83itgfml","slide":10,"text":"Use M1_xgb_focus_only as the scalar-feature benchmark: macro RMS 0.2044, energy MAE 11.48 GeV, angular median 5.87 mrad.","textPreview":"Use M1_xgb_focus_only as the scalar-feature benchmark: macro RMS 0.2044, energy MAE 11.48 GeV, angular median 5.87 mrad.","textChars":120,"textLines":1,"bbox":[73,314,500,100]}
+{"kind":"shape","id":"sh/xobm58z2","slide":10,"bbox":[657,213,581,245]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":10,"text":"Rebuild command","textPreview":"Rebuild command","textChars":15,"textLines":1,"bbox":[689,245,520,44]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":10,"text":"python -m zdc_reco.cli run-all-gcs --data-gcs gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root --config configs/legacy_vertex_default.yaml","textPreview":"python -m zdc_reco.cli run-all-gcs --data-gcs gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root ...","textChars":180,"textLines":1,"bbox":[689,312,510,114]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":10,"text":"Delete staged data later: gcloud storage rm gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root","textPreview":"Delete staged data later: gcloud storage rm gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root","textChars":134,"textLines":1,"bbox":[657,466,560,54]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":10,"text":"The final package keeps both the accepted result and the remaining neural-caveat visible.","textPreview":"The final package keeps both the accepted result and the remaining neural-caveat visible.","textChars":89,"textLines":1,"bbox":[41,548,1000,48]}
+{"kind":"notes","id":"nt/yahdcr","slide":10,"text":""}

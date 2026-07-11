@@ -1,41 +1,45 @@
-# ZDC Blocked Study Package
+# ZDC Study Package
 
 Created: 2026-07-11
 
 ## Status
 
-This package documents a fail-closed run of the requested ZDC single-neutron four-vector study. It is
-not a completed training/evaluation result. The study stopped at the Phase 1 data-contract gate
-because ECAL/HCAL hit-signal units and conversion to GeV were not found in authoritative simulation
-metadata, simulation code, or data documentation.
+This package documents the accepted scalar-feature/XGBoost ZDC single-neutron four-vector result and
+the QA path that resolved the ECAL/HCAL hit-signal gate using the user's continuation plus the prior
+`ML ZDC all` implementation evidence.
 
-## Most important files
+## Most Important Files
 
-- `outputs/reports/BLOCKED.md`: exact stop reason, resolved facts, failing check, and smallest user
-  decision needed.
-- `outputs/reports/qa_ledger.md`: commands run, tests, checklist status, and audit trail.
-- `outputs/reports/analysis_summary.md`: compact narrative summary.
-- `outputs/ZDC_Blocked_Rebuild_Presentation.pptx`: self-standing presentation for colleagues.
-- `zdc_hybrid_source_blocked_20260711.tar.gz`: source-only tarball. It excludes ROOT data, local
-  environments, caches, models, predictions, and credentials.
-- `environment.lock.txt`: exact Python package lock from the working `.venv`.
-- `outputs/preflight/root_metadata.json`: ROOT metadata from the supplied GCS object.
-- `outputs/reports/truth_summary.json`: truth-branch full pass showing one neutron per event and
-  total-energy GeV semantics.
-- `outputs/reports/hit_sample_summary.json`: deterministic sample-window hit checks.
-- `outputs/reports/artifact_hashes.sha256`: SHA-256 hashes for key artifacts.
+- `outputs/reports/final_report.md`: self-contained result, provenance, metrics, limitations, and
+  reproduction command.
+- `outputs/reports/model_card.md`: champion model card for `M1_xgb_focus_only`.
+- `outputs/reports/hit_unit_resolution.md`: ECAL/HCAL hit-signal scale decision and evidence.
+- `outputs/reports/qa_ledger.md` and `outputs/reports/qa_ledger_continuation_20260711.md`: original
+  audit plus continuation evidence.
+- `outputs/reports/selection_decision.md`: validation selection decision from the accepted Vertex run.
+- `outputs/metrics/test_focus_summary.json`: locked focus-test summary.
+- `outputs/metrics/validation_leaderboard.csv`: validation candidate comparison.
+- `outputs/predictions/test_M1_xgb_focus_only.parquet`: accepted champion focus-test prediction
+  artifact copied from the prior Vertex output set.
+- `outputs/ZDC_Accepted_XGB_Result_Presentation.pptx`: self-standing presentation for colleagues.
+- `zdc_hybrid_source_accepted_xgb_20260711.tar.gz`: source tarball for the final accepted-result
+  repository state.
+- `outputs/reports/vertex_data_staging.json`: proof that the local ROOT file matches the staged
+  `US-CENTRAL1` object used by Vertex.
 
-## Rebuild command after the missing authority is supplied
+## Rebuild Command
 
 ```bash
-zdc-reco run-all --config configs/study.yaml --data gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root
+python -m zdc_reco.cli run-all-gcs --data-gcs gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root --output-gcs gs://asiop-zdc-1-zdc-reco-us-central1/runs/rebuild-<DATE>/outputs --config configs/legacy_vertex_default.yaml --workdir /tmp/zdc_run
 ```
 
-Without authoritative hit-unit evidence, the command correctly fails closed and writes
-`outputs/reports/BLOCKED.md`.
+## Delete Staged Data Later
 
-## What was not run
+```bash
+gcloud storage rm "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root"
+```
 
-No production feature build, new split freeze, baseline training, XGBoost training, dual-grid T4
-training, champion selection, calibration, test unlock, or final test metric was run under this
-current repository state. New Vertex spend after blocker detection was `$0`.
+## What Is Still Not Claimed
+
+The accepted run is not the newer dual-grid T4 neural study. It is the completed scalar-feature
+XGBoost study from the prior implementation, now explicitly imported and documented in this repo.

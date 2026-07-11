@@ -1,0 +1,9 @@
+{
+  "calibration_hash": "d667c46e20673c5b58b4f7b13e97e1255778443e4bf74d9ab92acdc83778b454",
+  "champion_model_id": "M1_xgb_focus_only",
+  "created_utc": "2026-07-10T15:12:26.979456+00:00",
+  "selection_decision_hash": "5ec2be1876f85c33baba1dd9f8a79357b50e500db31c5e897f0d6dc007b679a9",
+  "statement": "No further tuning is allowed after this unlock.",
+  "test_query": "split == 'test' and 50 <= generator_energy_gev <= 250",
+  "validation_leaderboard_hash": "3b0220b6625fdf16f2af7d24dda4e818dc35843dc0318d16a11207a1a5a4f663"
+}

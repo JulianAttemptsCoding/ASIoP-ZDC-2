@@ -1,0 +1,20 @@
+{
+  "focus_counts": {
+    "test": 50685,
+    "train": 408276,
+    "validation": 50626
+  },
+  "group_policy": "group_uid comes from detector fingerprint because no run/seed branch exists.",
+  "rows": 764940,
+  "shoulder_counts": {
+    "test": 25420,
+    "train": 204549,
+    "validation": 25384
+  },
+  "split_counts": {
+    "test": 76105,
+    "train": 612825,
+    "validation": 76010
+  },
+  "split_sha256": "16668878691c54415e07758d663ec0a1b34de96b0ff1a25c203480ef23c7f77c"
+}

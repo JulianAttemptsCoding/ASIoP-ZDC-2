@@ -1,0 +1,30 @@
+﻿{
+    "created_utc":  "2026-07-11T05:33:41Z",
+    "project":  "asiop-zdc-1",
+    "vertex_region":  "us-central1",
+    "active_gcloud_account":  "jjjsresearch@gmail.com",
+    "local_input":  {
+                        "path":  "C:\\Users\\Julia\\OneDrive\\Desktop\\coding\\ASIoP\\ML ZDC all 1\\myTree_20251117_765k_0to300GeV_neutron_All.root",
+                        "size_bytes":  25022001408,
+                        "last_write_time":  "2026-07-10T14:42:28.6451987+08:00",
+                        "sha256":  "b7c666040e42352e158a9a3f78158d147cb2e056c6c88248d892c956f5c7b533",
+                        "crc32c_base64":  "lCVUvQ==",
+                        "md5_base64":  "sQdukAxxUbb+Fh3JDOUjLQ=="
+                    },
+    "vertex_staging":  {
+                           "storage_uri":  "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+                           "bucket_location":  "US-CENTRAL1",
+                           "storage_class":  "STANDARD",
+                           "size_bytes":  25022001408,
+                           "crc32c_base64":  "lCVUvQ==",
+                           "generation":  "1783683550292251",
+                           "component_count":  32,
+                           "soft_delete_retention":  "604800 seconds",
+                           "status":  "already_staged_for_vertex_custom_jobs; local CRC32C/size match remote object, so no duplicate upload was performed",
+                           "delete_when_finished":  "gcloud storage rm \"gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root\""
+                       },
+    "use_for_vertex_jobs":  {
+                                "data_argument":  "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+                                "run_all_after_unit_authority":  "python -m zdc_reco.cli run-all-gcs --data-gcs gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root --output-gcs gs://asiop-zdc-1-zdc-reco-us-central1/runs/rebuild-<DATE>/outputs --config configs/legacy_vertex_default.yaml --workdir /tmp/zdc_run"
+                            }
+}

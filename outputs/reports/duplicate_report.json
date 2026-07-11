@@ -1,0 +1,7 @@
+{
+  "duplicate_events": 7628,
+  "duplicate_fingerprint_groups": 15,
+  "events": 764940,
+  "group_policy": "No run/seed/source-group branch is present. group_uid is detector fingerprint so exact duplicate detector observations cannot cross splits; unique fingerprints act as event-level independent groups.",
+  "unique_detector_fingerprints": 757327
+}
