@@ -1,0 +1,369 @@
+{
+  "config": "configs/study.yaml",
+  "created_utc": "2026-07-11T04:41:06+00:00",
+  "metadata": {
+    "keys": [
+      "myTree;865",
+      "myTree;864",
+      "h3_ecalHitPos;1",
+      "h2_ecalHitPos2;1",
+      "h2_hcalHitPos2;1",
+      "c3;1"
+    ],
+    "objects": {
+      "c3;1": {
+        "classname": "TCanvas",
+        "title": null
+      },
+      "h2_ecalHitPos2;1": {
+        "classname": "TH2D",
+        "title": "h2_ecalHitPos2"
+      },
+      "h2_hcalHitPos2;1": {
+        "classname": "TH2D",
+        "title": "h2_hcalHitPos2"
+      },
+      "h3_ecalHitPos;1": {
+        "classname": "TH3D",
+        "title": "h3_ecalHitPos"
+      }
+    },
+    "trees": {
+      "myTree;864": {
+        "branches": {
+          "ecal_cellID": {
+            "title": "ecal_cellID",
+            "typename": "std::vector<int32_t>"
+          },
+          "ecal_energy": {
+            "title": "ecal_energy",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posX": {
+            "title": "ecal_posX",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posY": {
+            "title": "ecal_posY",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posZ": {
+            "title": "ecal_posZ",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ZDC": {
+            "title": "energyRatio_ZDC",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ecal": {
+            "title": "energyRatio_ecal",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ecal_emax": {
+            "title": "energyRatio_ecal_emax",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_hcal": {
+            "title": "energyRatio_hcal",
+            "typename": "std::vector<double>"
+          },
+          "energySum_ZDC": {
+            "title": "energySum_ZDC",
+            "typename": "std::vector<double>"
+          },
+          "energySum_ecal": {
+            "title": "energySum_ecal",
+            "typename": "std::vector<double>"
+          },
+          "energySum_hcal": {
+            "title": "energySum_hcal",
+            "typename": "std::vector<double>"
+          },
+          "hcal_LayerID": {
+            "title": "hcal_LayerID",
+            "typename": "std::vector<int32_t>"
+          },
+          "hcal_cellID": {
+            "title": "hcal_cellID",
+            "typename": "std::vector<int32_t>"
+          },
+          "hcal_energy": {
+            "title": "hcal_energy",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posX": {
+            "title": "hcal_posX",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posY": {
+            "title": "hcal_posY",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posZ": {
+            "title": "hcal_posZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_PDG": {
+            "title": "mcPar_PDG",
+            "typename": "std::vector<int32_t>"
+          },
+          "mcPar_endPX": {
+            "title": "mcPar_endPX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_endPY": {
+            "title": "mcPar_endPY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_endPZ": {
+            "title": "mcPar_endPZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_energy": {
+            "title": "mcPar_energy",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_energyEP": {
+            "title": "mcPar_energyEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_mass": {
+            "title": "mcPar_mass",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_mom": {
+            "title": "mcPar_mom",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEP": {
+            "title": "mcPar_momEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPX": {
+            "title": "mcPar_momEPX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPY": {
+            "title": "mcPar_momEPY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPZ": {
+            "title": "mcPar_momEPZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momX": {
+            "title": "mcPar_momX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momY": {
+            "title": "mcPar_momY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momZ": {
+            "title": "mcPar_momZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_phi": {
+            "title": "mcPar_phi",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_phiEP": {
+            "title": "mcPar_phiEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_theta": {
+            "title": "mcPar_theta",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_thetaEP": {
+            "title": "mcPar_thetaEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxX": {
+            "title": "mcPar_vtxX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxY": {
+            "title": "mcPar_vtxY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxZ": {
+            "title": "mcPar_vtxZ",
+            "typename": "std::vector<double>"
+          }
+        },
+        "classname": "TTree",
+        "num_entries": 764640,
+        "title": "MyTree"
+      },
+      "myTree;865": {
+        "branches": {
+          "ecal_cellID": {
+            "title": "ecal_cellID",
+            "typename": "std::vector<int32_t>"
+          },
+          "ecal_energy": {
+            "title": "ecal_energy",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posX": {
+            "title": "ecal_posX",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posY": {
+            "title": "ecal_posY",
+            "typename": "std::vector<double>"
+          },
+          "ecal_posZ": {
+            "title": "ecal_posZ",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ZDC": {
+            "title": "energyRatio_ZDC",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ecal": {
+            "title": "energyRatio_ecal",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_ecal_emax": {
+            "title": "energyRatio_ecal_emax",
+            "typename": "std::vector<double>"
+          },
+          "energyRatio_hcal": {
+            "title": "energyRatio_hcal",
+            "typename": "std::vector<double>"
+          },
+          "energySum_ZDC": {
+            "title": "energySum_ZDC",
+            "typename": "std::vector<double>"
+          },
+          "energySum_ecal": {
+            "title": "energySum_ecal",
+            "typename": "std::vector<double>"
+          },
+          "energySum_hcal": {
+            "title": "energySum_hcal",
+            "typename": "std::vector<double>"
+          },
+          "hcal_LayerID": {
+            "title": "hcal_LayerID",
+            "typename": "std::vector<int32_t>"
+          },
+          "hcal_cellID": {
+            "title": "hcal_cellID",
+            "typename": "std::vector<int32_t>"
+          },
+          "hcal_energy": {
+            "title": "hcal_energy",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posX": {
+            "title": "hcal_posX",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posY": {
+            "title": "hcal_posY",
+            "typename": "std::vector<double>"
+          },
+          "hcal_posZ": {
+            "title": "hcal_posZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_PDG": {
+            "title": "mcPar_PDG",
+            "typename": "std::vector<int32_t>"
+          },
+          "mcPar_endPX": {
+            "title": "mcPar_endPX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_endPY": {
+            "title": "mcPar_endPY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_endPZ": {
+            "title": "mcPar_endPZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_energy": {
+            "title": "mcPar_energy",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_energyEP": {
+            "title": "mcPar_energyEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_mass": {
+            "title": "mcPar_mass",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_mom": {
+            "title": "mcPar_mom",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEP": {
+            "title": "mcPar_momEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPX": {
+            "title": "mcPar_momEPX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPY": {
+            "title": "mcPar_momEPY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momEPZ": {
+            "title": "mcPar_momEPZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momX": {
+            "title": "mcPar_momX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momY": {
+            "title": "mcPar_momY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_momZ": {
+            "title": "mcPar_momZ",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_phi": {
+            "title": "mcPar_phi",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_phiEP": {
+            "title": "mcPar_phiEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_theta": {
+            "title": "mcPar_theta",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_thetaEP": {
+            "title": "mcPar_thetaEP",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxX": {
+            "title": "mcPar_vtxX",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxY": {
+            "title": "mcPar_vtxY",
+            "typename": "std::vector<double>"
+          },
+          "mcPar_vtxZ": {
+            "title": "mcPar_vtxZ",
+            "typename": "std::vector<double>"
+          }
+        },
+        "classname": "TTree",
+        "num_entries": 764940,
+        "title": "MyTree"
+      }
+    },
+    "uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root"
+  }
+}

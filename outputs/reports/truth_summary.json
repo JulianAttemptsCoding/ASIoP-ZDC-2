@@ -1,0 +1,25 @@
+﻿{
+  "data_uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root:myTree;865",
+  "energy_range_gev": [
+    0.939619280394676,
+    300.001371033516
+  ],
+  "flat_pdg_counts": {
+    "2112": 764940
+  },
+  "mass_shell_relative_residual": {
+    "max": 5.129467402495768e-16,
+    "median": 7.73733035177439e-17,
+    "p99": 2.8347701735281425e-16
+  },
+  "mcPar_length_counts": {
+    "1": 764940
+  },
+  "momentum_range_gev": [
+    0.010066100410736575,
+    299.99989973152265
+  ],
+  "primary_rule_status": "resolved: exactly one mcPar candidate per event and all PDG 2112",
+  "total_events": 764940,
+  "truth_energy_status": "resolved: mcPar_energy is total energy in GeV from mass-shell closure"
+}

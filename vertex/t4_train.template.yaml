@@ -1,0 +1,15 @@
+workerPoolSpecs:
+  - machineSpec:
+      machineType: MACHINE_TYPE_COMPATIBLE_WITH_T4
+      acceleratorType: NVIDIA_TESLA_T4
+      acceleratorCount: 1
+    replicaCount: "1"
+    containerSpec:
+      imageUri: REPLACE_WITH_TESTED_IMAGE_URI
+      command: ["zdc-reco"]
+      args: ["train-dual-grid", "--config", "configs/study.yaml", "--resume"]
+scheduling:
+  timeout: REPLACE_FROM_COST_LEDGER
+labels:
+  project: zdc-hybrid-reco
+  stage: train-dual-grid

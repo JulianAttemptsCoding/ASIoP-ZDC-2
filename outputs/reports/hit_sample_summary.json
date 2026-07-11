@@ -1,0 +1,174 @@
+﻿{
+  "data_uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root:myTree;865",
+  "note": "sample windows only; units unresolved because no authoritative unit source was found",
+  "windows": [
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2009,
+        "energy_finite": true,
+        "energy_max": 13.560215950012207,
+        "energy_min": 8.614733926215479e-12,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 282,
+        "hit_count_min": 0
+      },
+      "entry_start": 0,
+      "entry_stop": 20,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 36477,
+        "energy_finite": true,
+        "energy_max": 0.31950628757476807,
+        "energy_min": 2.509238205671699e-13,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 4161,
+        "hit_count_min": 65
+      },
+      "n_events": 20,
+      "window": "begin"
+    },
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2254,
+        "energy_finite": true,
+        "energy_max": 7.287030220031738,
+        "energy_min": 5.05242479797996e-11,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 287,
+        "hit_count_min": 0
+      },
+      "entry_start": 382460,
+      "entry_stop": 382480,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 27675,
+        "energy_finite": true,
+        "energy_max": 0.34559956192970276,
+        "energy_min": 4.150922227469378e-13,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 3474,
+        "hit_count_min": 0
+      },
+      "n_events": 20,
+      "window": "middle"
+    },
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2152,
+        "energy_finite": true,
+        "energy_max": 15.265970230102539,
+        "energy_min": 6.327172813458404e-11,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 264,
+        "hit_count_min": 1
+      },
+      "entry_start": 764920,
+      "entry_stop": 764940,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 35384,
+        "energy_finite": true,
+        "energy_max": 0.349928081035614,
+        "energy_min": 5.273259585068801e-13,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 3884,
+        "hit_count_min": 315
+      },
+      "n_events": 20,
+      "window": "end"
+    },
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2123,
+        "energy_finite": true,
+        "energy_max": 13.784317016601562,
+        "energy_min": 3.0850059919845796e-12,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 330,
+        "hit_count_min": 0
+      },
+      "entry_start": 427456,
+      "entry_stop": 427476,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 41451,
+        "energy_finite": true,
+        "energy_max": 0.34951362013816833,
+        "energy_min": 1.7104426327987227e-13,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 4133,
+        "hit_count_min": 0
+      },
+      "n_events": 20,
+      "window": "random_1"
+    },
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2285,
+        "energy_finite": true,
+        "energy_max": 15.165268898010254,
+        "energy_min": 1.3154931137460135e-11,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 286,
+        "hit_count_min": 2
+      },
+      "entry_start": 541726,
+      "entry_stop": 541746,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 42307,
+        "energy_finite": true,
+        "energy_max": 0.33471983671188354,
+        "energy_min": 9.240578544315523e-14,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 3972,
+        "hit_count_min": 916
+      },
+      "n_events": 20,
+      "window": "random_2"
+    },
+    {
+      "ecal": {
+        "aligned_lengths": true,
+        "energy_count": 2629,
+        "energy_finite": true,
+        "energy_max": 18.78262710571289,
+        "energy_min": 1.832377166666177e-10,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 290,
+        "hit_count_min": 0
+      },
+      "entry_start": 711636,
+      "entry_stop": 711656,
+      "hcal": {
+        "aligned_lengths": true,
+        "energy_count": 31660,
+        "energy_finite": true,
+        "energy_max": 0.36797988414764404,
+        "energy_min": 1.3194198338062346e-12,
+        "energy_negative_count": 0,
+        "energy_zero_count": 0,
+        "hit_count_max": 3073,
+        "hit_count_min": 255
+      },
+      "n_events": 20,
+      "window": "random_3"
+    }
+  ]
+}

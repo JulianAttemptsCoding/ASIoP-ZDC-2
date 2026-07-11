@@ -1,0 +1,58 @@
+﻿README.md
+vertex\t4_train.template.yaml
+vertex\cpu_preflight.template.yaml
+read me first\RESEARCH.md
+read me first\QC_LEDGER_10_PASSES.md
+read me first\MODEL_DESIGN.md
+read me first\MASTER_QC_CHECKLIST.md
+read me first\EXECUTION_PLAN.md
+read me first\EVALUATION_PROTOCOL.md
+read me first\ATTACHMENT_AUDIT.md
+read me first\AGENT_PROMPT.md
+pyproject.toml
+outputs\reports\BLOCKED.md
+tests\test_core.py
+Dockerfile
+SOURCE_MANIFEST.sha256
+AGENT_PROMPT.md
+Makefile
+tests\__pycache__\test_core.cpython-311.pyc
+tests\__pycache__\test_core.cpython-311-pytest-9.1.1.pyc
+tests\__pycache__\test_core.cpython-312.pyc
+outputs\preflight\root_metadata.json
+configs\study.yaml
+docs\RESEARCH.md
+docs\QC_LEDGER_10_PASSES.md
+docs\MODEL_DESIGN.md
+docs\MASTER_QC_CHECKLIST.md
+docs\EXECUTION_PLAN.md
+docs\EVALUATION_PROTOCOL.md
+docs\ATTACHMENT_AUDIT.md
+src\zdc_hybrid_reco.egg-info\top_level.txt
+src\zdc_hybrid_reco.egg-info\SOURCES.txt
+src\zdc_hybrid_reco.egg-info\requires.txt
+src\zdc_hybrid_reco.egg-info\PKG-INFO
+src\zdc_hybrid_reco.egg-info\dependency_links.txt
+src\zdc_hybrid\metrics.py
+src\zdc_hybrid\cli.py
+src\zdc_hybrid\calibration.py
+src\zdc_hybrid\budget.py
+src\zdc_hybrid\physics.py
+src\zdc_hybrid\objectives.py
+src\zdc_hybrid\smoke.py
+src\zdc_hybrid\__init__.py
+src\zdc_hybrid\__pycache__\__init__.cpython-312.pyc
+src\zdc_hybrid\__pycache__\__init__.cpython-311.pyc
+src\zdc_hybrid\__pycache__\smoke.cpython-312.pyc
+src\zdc_hybrid\__pycache__\smoke.cpython-311.pyc
+src\zdc_hybrid\__pycache__\physics.cpython-312.pyc
+src\zdc_hybrid\__pycache__\physics.cpython-311.pyc
+src\zdc_hybrid\__pycache__\objectives.cpython-312.pyc
+src\zdc_hybrid\__pycache__\objectives.cpython-311.pyc
+src\zdc_hybrid\__pycache__\metrics.cpython-312.pyc
+src\zdc_hybrid\__pycache__\metrics.cpython-311.pyc
+src\zdc_hybrid\__pycache__\cli.cpython-311.pyc
+src\zdc_hybrid\__pycache__\calibration.cpython-312.pyc
+src\zdc_hybrid\__pycache__\calibration.cpython-311.pyc
+src\zdc_hybrid\__pycache__\budget.cpython-312.pyc
+src\zdc_hybrid\__pycache__\budget.cpython-311.pyc

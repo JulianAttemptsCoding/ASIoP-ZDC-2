@@ -1,0 +1,28 @@
+﻿{
+    "OsName":  "Microsoft Windows 11 Home",
+    "OsVersion":  "10.0.26200",
+    "OsArchitecture":  "64-bit",
+    "CsProcessors":  [
+                         {
+                             "Name":  "AMD Ryzen 5 5500U with Radeon Graphics         ",
+                             "Manufacturer":  "AuthenticAMD",
+                             "Description":  "AMD64 Family 23 Model 104 Stepping 1",
+                             "Architecture":  9,
+                             "AddressWidth":  64,
+                             "DataWidth":  64,
+                             "MaxClockSpeed":  2100,
+                             "CurrentClockSpeed":  2100,
+                             "NumberOfCores":  6,
+                             "NumberOfLogicalProcessors":  12,
+                             "ProcessorID":  "178BFBFF00860F81",
+                             "SocketDesignation":  "FP6",
+                             "ProcessorType":  3,
+                             "Role":  "CPU",
+                             "Status":  "OK",
+                             "CpuStatus":  1,
+                             "Availability":  3
+                         }
+                     ],
+    "CsNumberOfLogicalProcessors":  12,
+    "CsTotalPhysicalMemory":  16473051136
+}

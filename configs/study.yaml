@@ -1,0 +1,122 @@
+project:
+  name: zdc_hybrid_reco_v3
+  seed: 20260711
+  output_dir: outputs
+
+physics:
+  particle_pdg: 2112
+  neutron_mass_gev: 0.93956542052
+  generator_support_gev: [0.0, 300.0]
+  focus_energy_gev: [50.0, 250.0]
+  focus_edges_gev: [50, 75, 100, 125, 150, 175, 200, 225, 250]
+  truth_energy_semantics: auto_strict
+  truth_energy_scale_to_gev: auto_strict
+  truth_momentum_scale_to_gev: auto_strict
+
+detector:
+  ecal:
+    material: LYSO
+    readout: SiPM
+    grid: [20, 20]
+    cell_cm: [3.0, 3.0, 7.0]
+    face_cm: [60.0, 60.0]
+    depth_x0: 6.5
+  hcal:
+    material: steel_scintillator_sampling
+    readout: SiPM
+    sampling_layers: 64
+    slices_per_layer: 8
+    volume_cm: [65.0, 60.0, 163.0]
+
+data:
+  expected_events: 765000
+  expected_events_relative_tolerance: 0.10
+  tree_name: auto_strict
+  root_path: null
+  group_keys_priority: [generator_seed, simulation_batch, source_file, event_id]
+  require_documented_hit_signal_units: true
+  require_exact_grid_mapping: true
+  allow_truth_features: false
+
+split:
+  fractions: {train: 0.80, validation: 0.10, test: 0.10}
+  grouped: true
+  duplicate_fingerprint_gate: true
+  freeze_manifest_before_modeling: true
+  validation_roles: [early_stopping, model_selection, point_calibration, empirical_interval_calibration]
+  formal_split_conformal_guarantee: false
+  test_open_once: true
+
+training_support:
+  candidates:
+    - {name: focus_only, low_gev: 50.0, high_gev: 250.0, shoulder_weight: 0.0}
+    - {name: guard_band, low_gev: 35.0, high_gev: 265.0, shoulder_weight: 0.20}
+    - {name: full_support, low_gev: 0.0, high_gev: 300.0, shoulder_weight: 0.10}
+  weight_by_joint_energy_theta: true
+  theta_edges_mrad: [0, 75, 150, 225, 300, 375, 462]
+  maximum_sample_weight_ratio: 10.0
+
+models:
+  baselines: [calibrated_sum_axis, linear]
+  xgb:
+    required_energy_variants: [log1p_kinetic_reproduction, raw_kinetic, baseline_residual]
+    direction_target: tangent_residual_to_analytic_axis
+    objective: reg:pseudohubererror
+    tree_method: hist
+    maximum_trials: 10
+    early_stopping_rounds: 75
+  dual_grid:
+    input_ecal: [3, 20, 20]
+    input_hcal: [3, 64, 8]
+    channels: [scaled_signal, log1p_scaled_signal, occupancy]
+    maximum_parameters: 1500000
+    energy_target: nonnegative_raw_kinetic
+    direction_target: tangent_residual_to_analytic_axis
+    maximum_trials: 4
+    maximum_epochs: 35
+    early_stopping_patience: 6
+    mixed_precision: true
+  ensemble:
+    allowed_alphas: [0.0, 0.25, 0.5, 0.75, 1.0]
+    minimum_relative_gain_over_simpler: 0.02
+  gnn:
+    enabled_by_default: false
+    escalation_only: true
+
+loss:
+  relative_energy_floor_gev: 25.0
+  energy_point_weight: 1.0
+  macro_energy_bin_bias_weight: 0.35
+  direction_cosine_weight: 0.15
+  quantile_weight: 0.10
+  quantiles: [0.16, 0.50, 0.84]
+
+calibration:
+  point_method: energy_balanced_global_isotonic
+  inputs: [uncalibrated_predicted_energy]
+  use_true_angle: false
+  compare_identity: true
+  maximum_clipped_fraction: 0.005
+  empirical_coverages: [0.68, 0.90, 0.95]
+
+selection:
+  population: validation_focus_50_250
+  primary_metric: macro_rms_relative_fourvector_error
+  required_slices: [energy, theta, phi, entry_margin, hit_count, visible_signal, containment]
+  neural_or_ensemble_minimum_relative_gain: 0.02
+  max_abs_energy_bin_bias_red_flag: 0.05
+  no_material_slice_regression: true
+  bootstrap_unit: independent_group
+
+compute:
+  absolute_credit_limit_usd: 90.0
+  planned_spend_limit_usd: 78.0
+  reserve_usd: 12.0
+  accelerator_type: NVIDIA_TESLA_T4
+  accelerator_count: 1
+  replicas: 1
+  maximum_concurrent_trials: 1
+  no_persistent_resource: true
+  no_online_endpoint: true
+  require_current_regional_price_lookup: true
+  require_timeout_on_every_job: true

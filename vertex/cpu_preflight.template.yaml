@@ -1,0 +1,13 @@
+workerPoolSpecs:
+  - machineSpec:
+      machineType: MACHINE_TYPE_FROM_CURRENT_REGION_AVAILABILITY
+    replicaCount: "1"
+    containerSpec:
+      imageUri: REPLACE_WITH_TESTED_IMAGE_URI
+      command: ["zdc-reco"]
+      args: ["preflight", "--config", "configs/study.yaml", "--data", "REPLACE_GCS_DATA_URI"]
+scheduling:
+  timeout: REPLACE_FROM_COST_LEDGER
+labels:
+  project: zdc-hybrid-reco
+  stage: preflight

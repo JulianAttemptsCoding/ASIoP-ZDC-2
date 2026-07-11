@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zdc-hybrid-reco"
+version = "3.0.0"
+description = "Audited hybrid single-neutron ZDC four-vector reconstruction scaffold"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "awkward>=2.7,<3",
+  "gcsfs>=2026.7,<2027",
+  "joblib>=1.4,<2",
+  "matplotlib>=3.9,<4",
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<3",
+  "pyarrow>=18,<24",
+  "PyYAML>=6.0,<7",
+  "scikit-learn>=1.6,<2",
+  "torch>=2.5,<3",
+  "uproot>=5.5,<6",
+  "xgboost>=2.1,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "ruff>=0.9,<1"]
+vertex = ["google-cloud-aiplatform>=1.80,<2", "google-cloud-storage>=2.19,<4"]
+
+[project.scripts]
+zdc-reco = "zdc_hybrid.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

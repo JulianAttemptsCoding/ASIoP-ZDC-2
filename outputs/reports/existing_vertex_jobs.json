@@ -1,0 +1,281 @@
+﻿[
+  {
+    "createTime": "2026-07-10T21:46:15.229129Z",
+    "displayName": "zdc-loss-curves-20260711",
+    "endTime": "2026-07-10T21:51:52Z",
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "14400s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "-c",
+              "from google.cloud import storage\nimport subprocess\nimport sys\n\nscript_uri = \"gs://asiop-zdc-1-zdc-reco-us-central1/runs/loss-curves-20260711/code/vertex_loss_curves.py\"\nbucket_name, blob_name = script_uri[5:].split(\"/\", 1)\nlocal_script = \"/tmp/vertex_loss_curves.py\"\nstorage.Client().bucket(bucket_name).blob(blob_name).download_to_filename(local_script)\nsubprocess.check_call([\n    sys.executable,\n    local_script,\n    \"--source-gcs\",\n    \"gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs\",\n    \"--output-gcs\",\n    \"gs://asiop-zdc-1-zdc-reco-us-central1/runs/loss-curves-20260711/outputs\",\n    \"--workdir\",\n    \"/tmp/zdc_loss_curves\",\n    \"--max-points\",\n    \"80\",\n])\n"
+            ],
+            "command": [
+              "python"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-progress4"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc_fourvector",
+      "stage": "diagnostics"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/358126888675180544",
+    "startTime": "2026-07-10T21:49:51Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-07-10T21:51:53.377880Z"
+  },
+  {
+    "createTime": "2026-07-10T14:57:18.538391Z",
+    "displayName": "zdc-reco-finalfix2-training-20260710",
+    "endTime": "2026-07-10T15:14:17Z",
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "21600s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "resume-training-gcs",
+              "--source-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+              "--output-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs",
+              "--config",
+              "configs/default.yaml",
+              "--workdir",
+              "/tmp/zdc_resume"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-progress4"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc-fourvector",
+      "spend-cap": "usd80",
+      "stage": "finalfix2"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/261950407570358272",
+    "startTime": "2026-07-10T15:00:10Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-07-10T15:14:21.031740Z"
+  },
+  {
+    "createTime": "2026-07-10T14:36:46.921244Z",
+    "displayName": "zdc-reco-finalfix-training-20260710",
+    "endTime": "2026-07-10T14:51:50Z",
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "21600s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "resume-training-gcs",
+              "--source-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+              "--output-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix/outputs",
+              "--config",
+              "configs/default.yaml",
+              "--workdir",
+              "/tmp/zdc_resume"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-progress3"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc-fourvector",
+      "spend-cap": "usd80",
+      "stage": "finalfix"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/7025371885462355968",
+    "startTime": "2026-07-10T14:40:16Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-07-10T14:52:09.116786Z"
+  },
+  {
+    "createTime": "2026-07-10T12:32:09.504677Z",
+    "displayName": "zdc-reco-full-cpu-progress2-20260710",
+    "endTime": "2026-07-10T14:20:24Z",
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "86400s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "run-all-gcs",
+              "--data-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+              "--output-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+              "--config",
+              "configs/default.yaml",
+              "--workdir",
+              "/tmp/zdc_run"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-progress2"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc-fourvector",
+      "spend-cap": "usd80",
+      "stage": "full-cpu"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/1795179790085390336",
+    "startTime": "2026-07-10T12:32:59Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-07-10T14:20:46.378643Z"
+  },
+  {
+    "createTime": "2026-07-10T11:57:00.591893Z",
+    "displayName": "zdc-reco-full-cpu-progress-20260710",
+    "endTime": "2026-07-10T12:32:05.791388Z",
+    "error": {
+      "code": 1,
+      "message": "CANCELED"
+    },
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "86400s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "run-all-gcs",
+              "--data-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+              "--output-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+              "--config",
+              "configs/default.yaml",
+              "--workdir",
+              "/tmp/zdc_run"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-progress1"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc-fourvector",
+      "spend-cap": "usd80",
+      "stage": "full-cpu"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/6534936922916126720",
+    "startTime": "2026-07-10T12:00:20Z",
+    "state": "JOB_STATE_CANCELLED",
+    "updateTime": "2026-07-10T12:32:05.791388Z"
+  },
+  {
+    "createTime": "2026-07-10T11:41:39.321725Z",
+    "displayName": "zdc-reco-full-cpu-20260710",
+    "endTime": "2026-07-10T11:53:20.024075Z",
+    "error": {
+      "code": 1,
+      "message": "CANCELED"
+    },
+    "jobSpec": {
+      "scheduling": {
+        "timeout": "86400s"
+      },
+      "workerPoolSpecs": [
+        {
+          "containerSpec": {
+            "args": [
+              "run-all-gcs",
+              "--data-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+              "--output-gcs",
+              "gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710/outputs",
+              "--config",
+              "configs/default.yaml",
+              "--workdir",
+              "/tmp/zdc_run"
+            ],
+            "imageUri": "us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:20260710-cpu32"
+          },
+          "diskSpec": {
+            "bootDiskSizeGb": 300,
+            "bootDiskType": "pd-standard"
+          },
+          "machineSpec": {
+            "machineType": "n1-standard-32"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "labels": {
+      "owner": "jjjsresearch",
+      "project": "zdc-fourvector",
+      "spend-cap": "usd80",
+      "stage": "full-cpu"
+    },
+    "name": "projects/39719277374/locations/us-central1/customJobs/6176478540075106304",
+    "startTime": "2026-07-10T11:45:12.468251Z",
+    "state": "JOB_STATE_CANCELLED",
+    "updateTime": "2026-07-10T11:53:20.024075Z"
+  }
+]

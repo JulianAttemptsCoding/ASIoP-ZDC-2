@@ -1,0 +1,13 @@
+﻿gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root:
+    Creation time:          Fri, 10 Jul 2026 11:39:10 GMT
+    Update time:            Fri, 10 Jul 2026 11:39:10 GMT
+    Storage class:          STANDARD
+    Content-Length:         25022001408
+    Content-Type:           application/octet-stream
+    Component-Count:        32
+    Hash (crc32c):          lCVUvQ==
+    ETag:                   CJvSoIODyJUDEAE=
+    Generation:             1783683550292251
+    Metageneration:         1
+    ACL:                    []
+TOTAL: 1 objects, 25022001408 bytes (23.3 GiB)
