@@ -20,8 +20,3 @@ workerPoolSpecs:
         - /tmp/zdc_resume
 scheduling:
   timeout: 21600s
-labels:
-  owner: jjjsresearch
-  project: zdc-fourvector
-  stage: raw-kinetic-mse
-  source: finalfix2
