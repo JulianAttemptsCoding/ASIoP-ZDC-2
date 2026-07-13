@@ -1,0 +1,16 @@
+Deck evidence sources
+
+ML ZDC all archived bundle
+- outputs/presentation_analysis/all_neutron_finalfix2: finalfix2 model artifacts, metrics, predictions, and basic plots.
+- outputs/presentation_analysis/derived/figures: response, residual, slice, angular, feature, mass-shell, and pencil-beam comparison figures.
+- outputs/presentation_analysis/loss_curves_vertex: boosting-loss and error-driver figures.
+
+ML ZDC all 1
+- outputs/reports/previous_vertex_jobs: base full-cpu, finalfix, and finalfix2 run metrics.
+- docs/FOURVECTOR_COMPONENT_METRICS_COMPARISON.md: locked focus-test physical-component comparison of the log1p(K) and direct-K targets.
+- Vertex raw-K run: gs://asiop-zdc-1-zdc-reco-us-central1/runs/raw-kinetic-mse-20260713-51b0ff0/outputs.
+
+Scope
+- All model metrics are simulation results for one-neutron ZDC events with focus range 50-250 GeV unless a slide explicitly identifies a different task.
+- The pencil-beam model is energy-only and is displayed separately from the all-neutron four-vector task.
+- N1, H1, and G1 appear in the design record but have no archived training output or metric artifact.
