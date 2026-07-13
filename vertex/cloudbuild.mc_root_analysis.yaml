@@ -1,0 +1,13 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --network
+      - cloudbuild
+      - -f
+      - vertex/Dockerfile.mc_root_analysis
+      - -t
+      - us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:mc-root-analysis-vertex-highmem-20260713
+      - .
+images:
+  - us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:mc-root-analysis-vertex-highmem-20260713

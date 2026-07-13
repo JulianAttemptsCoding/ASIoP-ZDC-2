@@ -1,0 +1,17 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY src/zdc_reco ./zdc_reco
+
+RUN python -m pip install --no-cache-dir --upgrade pip && \
+    python -m pip install --no-cache-dir \
+      "awkward>=2.7,<3" \
+      "fsspec>=2026.6,<2027" \
+      "gcsfs>=2026.7,<2027" \
+      "matplotlib>=3.9,<4" \
+      "numpy>=2.0,<3" \
+      "pandas>=2.2,<3" \
+      "uproot>=5.5,<6"
+
+CMD ["python", "-m", "zdc_reco.mc_root_analysis"]

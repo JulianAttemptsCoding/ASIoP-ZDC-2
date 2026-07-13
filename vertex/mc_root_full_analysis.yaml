@@ -1,0 +1,28 @@
+scheduling:
+  timeout: 7200s
+workerPoolSpecs:
+  - replicaCount: 1
+    machineSpec:
+      machineType: n1-highmem-32
+    diskSpec:
+      bootDiskType: pd-ssd
+      bootDiskSizeGb: 300
+    containerSpec:
+      imageUri: us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:mc-root-analysis-vertex-highmem-20260713
+      command:
+        - python
+      args:
+        - -m
+        - zdc_reco.mc_root_analysis
+        - --input-uri
+        - gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root
+        - --output-uri
+        - gs://asiop-zdc-1-zdc-reco-us-central1/runs/mc-root-full-analysis-20260713-v3/outputs
+        - --tree-name
+        - myTree
+        - --step-size
+        - 100 MB
+        - --position-scale-to-cm
+        - "0.1"
+        - --decompression-workers
+        - "8"

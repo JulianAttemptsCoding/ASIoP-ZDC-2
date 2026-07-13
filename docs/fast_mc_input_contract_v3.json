@@ -1,0 +1,48 @@
+{
+  "source": {
+    "file_uri": "gs://asiop-zdc-1-zdc-reco-us-central1/data/myTree_20251117_765k_0to300GeV_neutron_All.root",
+    "tree": "myTree",
+    "events": 764940,
+    "event_unit": "one simulated event with jagged ECAL/HCAL hit deposits and MC particle truth"
+  },
+  "truth_conditioning": {
+    "required": ["generator_energy_gev", "px_true_gev", "py_true_gev", "pz_true_gev"],
+    "derived": ["energy_true_gev", "kinetic_energy_true_gev", "theta_true_rad", "phi_true_rad"],
+    "mcPar_energy": "total energy in GeV; validated against the neutron mass shell",
+    "neutron_mass_gev": 0.93956542052
+  },
+  "response_representations": [
+    "ECAL/HCAL totals, hit counts, and shower moments",
+    "ID-derived ECAL 20x20 energy tensor",
+    "explicitly coordinate-binned HCAL tensor after validation",
+    "original jagged ECAL and HCAL hit vectors"
+  ],
+  "geometry_validation": {
+    "ecal": {
+      "unique_cell_ids": 400,
+      "stable_position_conflicts": 0,
+      "permitted_grid": "20x20 indexed by ecal_cellID"
+    },
+    "hcal": {
+      "layers": 65,
+      "unique_layer_cell_pairs": 6454,
+      "position_conflicts": 665613,
+      "restriction": "Do not construct a fixed grid from hcal_LayerID and hcal_cellID alone."
+    }
+  },
+  "must_preserve": [
+    "nonnegative deposits",
+    "ECAL/HCAL correlation",
+    "conditional hit multiplicity",
+    "zero-hit and zero-visible-signal events",
+    "jagged alignment across each detector hit vector"
+  ],
+  "known_absences": [
+    "timing",
+    "waveforms",
+    "ADC",
+    "SiPM gain",
+    "electronics noise",
+    "pileup"
+  ]
+}
