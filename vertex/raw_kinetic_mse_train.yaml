@@ -1,0 +1,27 @@
+workerPoolSpecs:
+  - machineSpec:
+      machineType: n1-standard-32
+    diskSpec:
+      bootDiskType: pd-standard
+      bootDiskSizeGb: 300
+    replicaCount: "1"
+    containerSpec:
+      imageUri: us-central1-docker.pkg.dev/asiop-zdc-1/zdc-reco/zdc-reco:kinetic-mse-20260713-51b0ff0
+      command: ["zdc-reco-legacy"]
+      args:
+        - resume-training-gcs
+        - --source-gcs
+        - gs://asiop-zdc-1-zdc-reco-us-central1/runs/full-cpu-20260710-finalfix2/outputs
+        - --output-gcs
+        - gs://asiop-zdc-1-zdc-reco-us-central1/runs/raw-kinetic-mse-20260713-51b0ff0/outputs
+        - --config
+        - configs/vertex_kinetic_mse.yaml
+        - --workdir
+        - /tmp/zdc_resume
+scheduling:
+  timeout: 21600s
+labels:
+  owner: jjjsresearch
+  project: zdc-fourvector
+  stage: raw-kinetic-mse
+  source: finalfix2
