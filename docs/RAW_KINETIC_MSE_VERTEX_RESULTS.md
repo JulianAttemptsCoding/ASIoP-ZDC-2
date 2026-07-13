@@ -73,3 +73,5 @@ The empirical energy-interval coverages on the locked focus test are 0.681997, 0
 
 The reproducible job specification is [raw_kinetic_mse_train.yaml](../vertex/raw_kinetic_mse_train.yaml),
 and the training configuration is [vertex_kinetic_mse.yaml](../configs/vertex_kinetic_mse.yaml).
+The full actual-energy and momentum-component comparison is in
+[FOURVECTOR_COMPONENT_METRICS_COMPARISON.md](FOURVECTOR_COMPONENT_METRICS_COMPARISON.md).
