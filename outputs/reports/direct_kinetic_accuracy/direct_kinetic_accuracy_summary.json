@@ -1,0 +1,38 @@
+{
+  "empirical_interval_coverage": {
+    "0.68": 0.6819966459504785,
+    "0.9": 0.9003847292098254,
+    "0.95": 0.9517806057018842
+  },
+  "evaluation": "locked 50-250 GeV focus test",
+  "events": 50685,
+  "model": "M1_xgb_focus_only",
+  "not_available": "The direct-kinetic Vertex artifact set does not persist per-boosting loss curves.",
+  "recalculation_qa": {
+    "angular_68_mrad": 7.981126926013164,
+    "angular_95_mrad": 16.62022486411495,
+    "angular_median_mrad": 5.872449369436467,
+    "energy_mae_gev": 11.418698849384043,
+    "energy_relative_rmse": 0.16470349451492614,
+    "mass_shell_residual_abs_max_gev2": 2.549715993893642e-11
+  },
+  "saved_vertex_focus_metrics": {
+    "angular_68_mrad": 7.981126925988681,
+    "angular_95_mrad": 16.62022486411495,
+    "angular_median_mrad": 5.872449369417561,
+    "angular_valid_fraction": 1.0,
+    "energy_mae_gev": 11.418698849384043,
+    "energy_relative_bias_mean": 0.023615329245542487,
+    "energy_relative_rmse": 0.16470349451492614,
+    "energy_relative_width68": 0.07164365221479034,
+    "energy_response_mean": 1.0236153292455425,
+    "energy_response_median": 1.009097557084533,
+    "focus_events": 50685,
+    "macro_rms_relative_fourvector_error": 0.21200112321129722,
+    "mass_shell_residual_abs_max_gev2": 2.549715993893642e-11,
+    "n_events": 50685,
+    "relative_fourvector_error_mean": 0.12440191711232819,
+    "relative_fourvector_error_rms": 0.23326144180285188
+  },
+  "target": "kinetic_energy"
+}
