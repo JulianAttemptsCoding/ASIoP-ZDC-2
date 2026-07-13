@@ -6,7 +6,32 @@ import numpy as np
 
 from .physics import fourvector_from_kinetic_direction
 
-TARGET_NAMES = ("log1p_kinetic", "ux", "uy", "uz")
+LOG1P_KINETIC_TARGET = "log1p_kinetic_energy_plus_unit_direction"
+RAW_KINETIC_TARGET = "kinetic_energy_plus_unit_direction"
+
+_ENERGY_TARGET_NAMES = {
+    LOG1P_KINETIC_TARGET: "log1p_kinetic",
+    RAW_KINETIC_TARGET: "kinetic_energy",
+}
+_CANONICAL_ENERGY_TARGETS = set(_ENERGY_TARGET_NAMES.values())
+
+
+def energy_target_name(target: str) -> str:
+    """Return the persisted energy-head name for a configured training target."""
+    if target in _ENERGY_TARGET_NAMES:
+        return _ENERGY_TARGET_NAMES[target]
+    if target in _CANONICAL_ENERGY_TARGETS:
+        return target
+    raise ValueError(f"Unsupported constrained-model target: {target}")
+
+
+def kinetic_from_energy_prediction(prediction: np.ndarray, target: str) -> np.ndarray:
+    """Decode a nonnegative kinetic-energy prediction from the energy-head scale."""
+    values = np.asarray(prediction, dtype=float)
+    name = energy_target_name(target)
+    if name == "log1p_kinetic":
+        return np.maximum(np.expm1(values), 0.0)
+    return np.maximum(values, 0.0)
 
 
 @dataclass
@@ -14,13 +39,14 @@ class ConstrainedRegressor:
     energy_model: object
     direction_models: tuple[object, object, object]
     mass_gev: float
-    max_log_kinetic: float | None = None
+    energy_target: str = "log1p_kinetic"
+    max_energy_target: float | None = None
 
     def predict(self, features: np.ndarray) -> np.ndarray:
-        log_kinetic = np.asarray(self.energy_model.predict(features), dtype=float)
-        if self.max_log_kinetic is not None:
-            log_kinetic = np.clip(log_kinetic, 0.0, self.max_log_kinetic)
-        kinetic = np.maximum(np.expm1(log_kinetic), 0.0)
+        energy_prediction = np.asarray(self.energy_model.predict(features), dtype=float)
+        if self.max_energy_target is not None:
+            energy_prediction = np.clip(energy_prediction, 0.0, self.max_energy_target)
+        kinetic = kinetic_from_energy_prediction(energy_prediction, self.energy_target)
         direction = np.column_stack([model.predict(features) for model in self.direction_models])
         norm = np.linalg.norm(direction, axis=1)
         bad = ~np.isfinite(norm) | (norm <= 1e-12)
@@ -29,12 +55,19 @@ class ConstrainedRegressor:
         return fourvector_from_kinetic_direction(kinetic, direction, self.mass_gev)
 
 
-def make_training_targets(kinetic_energy_gev: np.ndarray, direction: np.ndarray) -> np.ndarray:
+def make_training_targets(
+    kinetic_energy_gev: np.ndarray,
+    direction: np.ndarray,
+    *,
+    target: str = LOG1P_KINETIC_TARGET,
+) -> np.ndarray:
     kinetic = np.asarray(kinetic_energy_gev, dtype=float)
     direction = np.asarray(direction, dtype=float)
     if np.any(kinetic < 0.0) or direction.shape != (len(kinetic), 3):
         raise ValueError("Invalid constrained-model targets")
-    return np.column_stack([np.log1p(kinetic), direction])
+    energy_name = energy_target_name(target)
+    energy = np.log1p(kinetic) if energy_name == "log1p_kinetic" else kinetic
+    return np.column_stack([energy, direction])
 
 
 def energy_balanced_weights(
@@ -68,6 +101,7 @@ def train_xgboost_constrained(
     max_rounds: int,
     early_stopping_rounds: int,
     mass_gev: float,
+    energy_target: str = LOG1P_KINETIC_TARGET,
 ) -> ConstrainedRegressor:
     try:
         import xgboost as xgb
@@ -99,8 +133,15 @@ def train_xgboost_constrained(
             return self.booster.predict(xgb.DMatrix(values))
 
     adapters = [_BoosterAdapter(model) for model in models]
-    max_log_kinetic = float(np.nanmax(train_y[:, 0]))
-    return ConstrainedRegressor(adapters[0], tuple(adapters[1:]), mass_gev, max_log_kinetic)
+    canonical_energy_target = energy_target_name(energy_target)
+    max_energy_target = float(np.nanmax(train_y[:, 0]))
+    return ConstrainedRegressor(
+        adapters[0],
+        tuple(adapters[1:]),
+        mass_gev,
+        canonical_energy_target,
+        max_energy_target,
+    )
 
 
 def empirical_absolute_error_quantiles(

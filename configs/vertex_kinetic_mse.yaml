@@ -1,0 +1,158 @@
+project:
+  name: zdc_fourvector_reco_kinetic_mse
+  # Keep the original split seed so this is a single-variable target-loss ablation.
+  seed: 20260710
+  output_dir: outputs
+
+physics:
+  particle_pdg: 2112
+  neutron_mass_gev: 0.93956542052
+  truth_energy_semantics: auto_strict
+  truth_energy_scale_to_gev: auto_strict
+  truth_momentum_scale_to_gev: auto_strict
+  convention_median_relative_tolerance: 0.00001
+  convention_p99_relative_tolerance: 0.001
+  convention_min_score_ratio: 10.0
+  direction_valid_min_p_gev: 0.0001
+  benchmark_axis: generator_energy_gev
+  focus_energy_gev: [50.0, 250.0]
+  training_support_gev: [0.0, 300.0]
+
+data:
+  tree_name: auto_strict
+  expected_events: 765000
+  expected_events_relative_tolerance: 0.10
+  step_size: "100 MB"
+  inspection_events: 50000
+  feature_smoke_events: 50000
+  truth_particle_policy: exactly_one_neutron
+  branches:
+    ecal_x: ecal_posX
+    ecal_y: ecal_posY
+    ecal_z: ecal_posZ
+    ecal_signal: ecal_energy
+    hcal_x: hcal_posX
+    hcal_y: hcal_posY
+    hcal_z: hcal_posZ
+    hcal_signal: hcal_energy
+    truth_pdg: mcPar_PDG
+    truth_energy: mcPar_energy
+    truth_px: mcPar_momX
+    truth_py: mcPar_momY
+    truth_pz: mcPar_momZ
+    event_id: null
+    source_group: null
+    truth_status: null
+    truth_parent: null
+    ecal_cell_id: ecal_cellID
+    hcal_cell_id: hcal_cellID
+    hcal_layer_id: hcal_LayerID
+    hcal_slice_id: null
+  hit_signal_scale_to_gev:
+    ecal: 1.0
+    hcal: 1.0
+  hit_threshold_gev:
+    ecal: 0.0
+    hcal: 0.0
+  allow_negative_hit_signals: false
+
+geometry:
+  frame_mode: infer_from_ecal_to_hcal
+  position_scale_to_cm: 0.1
+  geometry_sample_events: 50000
+  minimum_ecal_hcal_center_separation_cm: 5.0
+  dimension_relative_tolerance: 0.10
+  ecal:
+    material: LYSO
+    grid: [20, 20]
+    cell_cm: [3.0, 3.0, 7.0]
+    face_cm: [60.0, 60.0]
+    depth_x0: 6.5
+  hcal:
+    material: steel_scintillator_sampling
+    volume_cm: [65.0, 60.0, 163.0]
+    sampling_layers: 64
+    slices_per_layer: 8
+  require_locked_transform: true
+
+split:
+  fractions:
+    train: 0.80
+    validation: 0.10
+    test: 0.10
+  group_keys: [source_file, source_group]
+  duplicate_detector_hash_check: true
+  stratify_energy_edges_gev: [0, 10, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300]
+  theta_bins: 8
+  phi_bins: 8
+  lock_test_until_final: true
+
+features:
+  tier: AB
+  hcal_depth_groups: 8
+  ecal_depth_groups: 2
+  top_hit_counts: [1, 3, 5, 10, 20]
+  hit_energy_density_edges_gev: [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0]
+  line_fit_min_hits: 2
+  pca_min_hits: 3
+  allow_truth_features: false
+  imputation: finite_zero_with_missing_indicators
+
+training:
+  # The energy head minimizes weighted squared error directly in K [GeV].
+  target: kinetic_energy_plus_unit_direction
+  support_candidates:
+    - name: focus_only
+      shoulder_weight: 0.0
+    - name: full_support
+      shoulder_weight: 0.25
+  energy_bin_balance: true
+  xgboost:
+    tree_method: hist
+    device: cpu
+    objective: reg:squarederror
+    eval_metric: rmse
+    learning_rate: 0.04
+    max_depth: 7
+    min_child_weight: 20
+    subsample: 0.9
+    colsample_bytree: 0.9
+    reg_lambda: 3.0
+    reg_alpha: 0.0
+    max_rounds: 2500
+    early_stopping_rounds: 80
+    max_first_sweep_trials: 16
+  gpu_benchmark:
+    enabled: true
+    min_speedup_to_use: 1.25
+    max_metric_relative_difference: 0.001
+
+selection:
+  dataset: validation_focus_50_250_only
+  primary_metric: macro_rms_relative_fourvector_error
+  required_slice_dimensions: [energy, theta, phi, entry_margin, leakage_risk]
+  simpler_model_relative_tolerance: 0.005
+  boundary_pileup_window_gev: 1.0
+  boundary_pileup_max_fraction: 0.01
+  test_may_be_opened_once: true
+
+uncertainty:
+  enabled: true
+  calibration_source: validation
+  formal_split_conformal_guarantee: false
+  interpretation: empirical_validation_residual_intervals_verified_once_on_test
+  marginal_coverages: [0.68, 0.90, 0.95]
+  report_coverage_by_energy_angle_slice: true
+
+compute:
+  credit_limit_usd: 100.0
+  planned_spend_limit_usd: 80.0
+  reserve_usd: 20.0
+  require_runtime_cost_estimate: true
+  cpu_machine_type: n1-standard-32
+  gpu_machine_type: n1-standard-8
+  accelerator_type: NVIDIA_TESLA_T4
+  accelerator_count: 1
+  cpu_max_runtime_hours: 24
+  gpu_max_runtime_hours: 6
+  max_concurrent_trials: 1

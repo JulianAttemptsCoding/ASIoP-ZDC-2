@@ -29,6 +29,18 @@ def validate_config(cfg: dict[str, Any]) -> None:
         raise ValueError("planned spend cannot exceed the credit limit")
     if cfg["features"].get("allow_truth_features", False):
         raise ValueError("Truth features are forbidden")
+    target = cfg["training"].get("target")
+    allowed_targets = {
+        "log1p_kinetic_energy_plus_unit_direction",
+        "kinetic_energy_plus_unit_direction",
+    }
+    if target not in allowed_targets:
+        raise ValueError(f"training.target must be one of {sorted(allowed_targets)}")
+    if (
+        target == "kinetic_energy_plus_unit_direction"
+        and cfg["training"]["xgboost"].get("objective") != "reg:squarederror"
+    ):
+        raise ValueError("Raw kinetic-energy training requires XGBoost reg:squarederror")
 
 
 def canonical_json_hash(value: Any) -> str:

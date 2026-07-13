@@ -19,7 +19,13 @@ from .contracts import assert_feature_provenance
 from .features import build_event_features, feature_manifest
 from .geometry import DetectorFrame, validate_frame
 from .metrics import evaluate_fourvectors, macro_rms_by_energy_bin, relative_fourvector_error
-from .models import energy_balanced_weights, make_training_targets, train_xgboost_constrained
+from .models import (
+    energy_balanced_weights,
+    energy_target_name,
+    kinetic_from_energy_prediction,
+    make_training_targets,
+    train_xgboost_constrained,
+)
 from .physics import (
     EnergyConvention,
     canonical_truth,
@@ -639,22 +645,30 @@ def train_baselines(*, config: str | Path, schema_path: str | Path, output_dir: 
         {"model_id": model_id, "deployable": _metrics_are_deployable(metrics), **metrics}
     )
 
+    training_target = str(cfg["training"]["target"])
+    energy_target = energy_target_name(training_target)
     y = make_training_targets(
         table["kinetic_energy_true_gev"].to_numpy(float),
         table[["ux_true", "uy_true", "uz_true"]].to_numpy(float),
+        target=training_target,
     )
     b1 = make_pipeline(StandardScaler(), Ridge(alpha=1.0))
     x = table[feature_cols].to_numpy(float)
     b1.fit(x[train], y[train])
     raw = b1.predict(x)
     pred_b1 = fourvector_from_kinetic_direction(
-        np.maximum(np.expm1(raw[:, 0]), 0.0), raw[:, 1:], mass
+        kinetic_from_energy_prediction(raw[:, 0], energy_target), raw[:, 1:], mass
     )
     model_id = "B1_ridge_constrained"
     model_dir = output_dir / "models" / model_id
     _save_pickle(
         model_dir / "model.pkl",
-        {"model": b1, "feature_cols": feature_cols, "prediction_kind": "kinetic_direction"},
+        {
+            "model": b1,
+            "feature_cols": feature_cols,
+            "prediction_kind": "kinetic_direction",
+            "energy_target": energy_target,
+        },
     )
     val_pred = _pred_frame(table.loc[validation], model_id, pred_b1[validation])
     write_parquet_atomic(val_pred, output_dir / "predictions" / f"validation_{model_id}.parquet")
@@ -722,9 +736,18 @@ def _save_xgb_model(
         model.direction_models[1].booster,
         model.direction_models[2].booster,
     ]
-    for name, booster in zip(("log1p_kinetic", "ux", "uy", "uz"), boosters, strict=True):
+    energy_target = str(model.energy_target)
+    for name, booster in zip((energy_target, "ux", "uy", "uz"), boosters, strict=True):
         booster.save_model(model_dir / f"{name}.json")
-        write_json(model_dir / "metadata.json", {"feature_cols": feature_cols, **metadata})
+        payload = {
+            "feature_cols": feature_cols,
+            "energy_target": energy_target,
+            "max_energy_target": model.max_energy_target,
+            **metadata,
+        }
+        if energy_target == "log1p_kinetic":
+            payload["max_log_kinetic"] = model.max_energy_target
+        write_json(model_dir / "metadata.json", payload)
 
 
 def _markdown_table(frame: pd.DataFrame) -> str:
@@ -752,9 +775,12 @@ def train_xgb(*, config: str | Path, schema_path: str | Path, output_dir: str | 
     validation = table["split"].eq("validation")
     validation_focus = validation & focus_mask(table["generator_energy_gev"])
     x = table[feature_cols].to_numpy(float)
+    training_target = str(cfg["training"]["target"])
+    energy_target = energy_target_name(training_target)
     y = make_training_targets(
         table["kinetic_energy_true_gev"].to_numpy(float),
         table[["ux_true", "uy_true", "uz_true"]].to_numpy(float),
+        target=training_target,
     )
     params = dict(cfg["training"]["xgboost"])
     max_rounds = int(params.pop("max_rounds"))
@@ -787,6 +813,7 @@ def train_xgb(*, config: str | Path, schema_path: str | Path, output_dir: str | 
             max_rounds=max_rounds,
             early_stopping_rounds=early,
             mass_gev=mass,
+            energy_target=training_target,
         )
         pred = model.predict(x[validation])
         model_id = f"M1_xgb_{name}"
@@ -798,7 +825,10 @@ def train_xgb(*, config: str | Path, schema_path: str | Path, output_dir: str | 
             {
                 "model_id": model_id,
                 "prediction_kind": "kinetic_direction",
-                "max_log_kinetic": model.max_log_kinetic,
+                "training_target": training_target,
+                "energy_head_loss": "squared error on raw kinetic_energy_gev"
+                if energy_target == "kinetic_energy"
+                else "squared error on log1p(kinetic_energy_gev)",
                 "support_candidate": candidate,
                 "train_rows": int(train_mask.sum()),
                 "validation_focus_rows": int(validation_focus.sum()),
@@ -955,7 +985,8 @@ def _load_prediction_model(output_dir: Path, model_id: str) -> tuple[Any, dict[s
     import xgboost as xgb
 
     boosters = []
-    for name in ("log1p_kinetic", "ux", "uy", "uz"):
+    energy_target = str(metadata.get("energy_target", "log1p_kinetic"))
+    for name in (energy_target, "ux", "uy", "uz"):
         booster = xgb.Booster()
         booster.load_model(model_dir / f"{name}.json")
         boosters.append(booster)
@@ -984,17 +1015,22 @@ def _predict_loaded(
         if prediction_kind != "kinetic_direction":
             raise ValueError(f"Unknown pickle prediction_kind: {prediction_kind}")
         return fourvector_from_kinetic_direction(
-            np.maximum(np.expm1(raw[:, 0]), 0.0), raw[:, 1:], mass
+            kinetic_from_energy_prediction(
+                raw[:, 0], str(metadata.get("energy_target", "log1p_kinetic"))
+            ),
+            raw[:, 1:],
+            mass,
         )
     import xgboost as xgb
 
     dmatrix = xgb.DMatrix(x)
     raw = np.column_stack([booster.predict(dmatrix) for booster in model])
-    max_log_kinetic = metadata.get("max_log_kinetic")
-    log_kinetic = raw[:, 0]
-    if max_log_kinetic is not None:
-        log_kinetic = np.clip(log_kinetic, 0.0, float(max_log_kinetic))
-    kinetic = np.maximum(np.expm1(log_kinetic), 0.0)
+    energy_target = str(metadata.get("energy_target", "log1p_kinetic"))
+    max_energy_target = metadata.get("max_energy_target", metadata.get("max_log_kinetic"))
+    energy_prediction = raw[:, 0]
+    if max_energy_target is not None:
+        energy_prediction = np.clip(energy_prediction, 0.0, float(max_energy_target))
+    kinetic = kinetic_from_energy_prediction(energy_prediction, energy_target)
     return fourvector_from_kinetic_direction(kinetic, raw[:, 1:], mass)
 
 
